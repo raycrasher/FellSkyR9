@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FellSky", "FellSky\FellSky.csproj", "{09649F82-9DFA-4DF8-BA4B-8A3E6F142B49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FellSky.Editor", "FellSky.Editor\FellSky.Editor.csproj", "{070D1526-85D8-4150-B33B-364002A65DFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09649F82-9DFA-4DF8-BA4B-8A3E6F142B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09649F82-9DFA-4DF8-BA4B-8A3E6F142B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09649F82-9DFA-4DF8-BA4B-8A3E6F142B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09649F82-9DFA-4DF8-BA4B-8A3E6F142B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070D1526-85D8-4150-B33B-364002A65DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070D1526-85D8-4150-B33B-364002A65DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070D1526-85D8-4150-B33B-364002A65DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070D1526-85D8-4150-B33B-364002A65DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
