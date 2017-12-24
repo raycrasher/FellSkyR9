@@ -13,13 +13,14 @@ Source/Code/FellSky/bin
 Source/Code/FellSky/obj
 Source/Code/FellSky.Editor/bin
 Source/Code/FellSky.Editor/obj
-Source/Code/Gwen/bin
-Source/Code/Gwen/obj
+Source/Code/FellSky.GfxTool/bin
+Source/Code/FellSky.GfxTool/obj
 Source/Packages/IconCache
 Temp
 logfile.txt
 logfile*.txt
 perflog*.txt
 DesignTimeData.dat
+UserData.dat
 *.suo
 EditorUserData.xml
