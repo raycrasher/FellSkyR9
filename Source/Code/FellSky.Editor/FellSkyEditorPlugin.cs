@@ -9,6 +9,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 using AdamsLair.WinForms.ItemModels;
 using Duality.Editor.Properties;
+using FellSky.Editor.Actions;
 
 namespace FellSky.Editor
 {
@@ -32,6 +33,30 @@ namespace FellSky.Editor
             {
                 Name = "Sprite Viewer",
                 ActionHandler = (o, e) => RequestAtlasViewer()
+            });
+
+            var spriteMenu = new MenuModelItem
+            {
+                Name = "Sprite"
+            };
+            main.MainMenu.AddItem(spriteMenu);
+            spriteMenu.AddItem(new MenuModelItem
+            {
+                Name = "Mirror Y",
+                ActionHandler = (o, e) => SpriteOperations.MirrorY(),
+                ShortcutKeys = Keys.Control | Keys.M
+            });
+            spriteMenu.AddItem(new MenuModelItem
+            {
+                Name = "Increase Depth",
+                ActionHandler = (o, e) => SpriteOperations.ChangeDepth(+1),
+                ShortcutKeys = Keys.Control | Keys.Add
+            });
+            spriteMenu.AddItem(new MenuModelItem
+            {
+                Name = "Decrease Depth",
+                ActionHandler = (o, e) => SpriteOperations.ChangeDepth(-1),
+                ShortcutKeys = Keys.Control | Keys.Subtract
             });
         }
 

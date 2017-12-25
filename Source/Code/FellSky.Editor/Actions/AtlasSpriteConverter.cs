@@ -36,8 +36,16 @@ namespace FellSky.Editor.Actions
                 if (renderer == null)
                 {
                     renderer = new AnimSpriteRenderer();
-                    renderer.AnimDuration = (0.1f * sprite.Item.Indexes.Length);
-                    renderer.AnimLoopMode = AnimSpriteRenderer.LoopMode.Loop;
+                    if (sprite.Item.Indexes.Length > 1)
+                    {
+                        renderer.AnimDuration = (0.1f * sprite.Item.Indexes.Length);
+                        renderer.AnimLoopMode = AnimSpriteRenderer.LoopMode.Loop;
+                    }
+                    else
+                    {
+                        renderer.AnimLoopMode = AnimSpriteRenderer.LoopMode.FixedSingle;
+                    }
+                
                     renderer.CustomFrameSequence = sprite.Item.Indexes.ToList();
                     var rect = sprite.Pixmap.Res.Atlas[sprite.Item.Indexes[0]];
                     

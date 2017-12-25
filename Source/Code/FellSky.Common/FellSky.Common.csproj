@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{070D1526-85D8-4150-B33B-364002A65DFA}</ProjectGuid>
+    <ProjectGuid>{66453490-A7C9-4F22-AA96-A4AAE39F3B9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FellSky.Editor</RootNamespace>
-    <AssemblyName>FellSky.Editor</AssemblyName>
+    <RootNamespace>FellSky</RootNamespace>
+    <AssemblyName>FellSky.Common.core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,60 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdamsLair.WinForms, Version=1.1.12.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Duality">
       <HintPath>..\..\..\Duality.dll</HintPath>
-    </Reference>
-    <Reference Include="DualityEditor">
-      <HintPath>..\..\..\DualityEditor.exe</HintPath>
     </Reference>
     <Reference Include="DualityPrimitives">
       <HintPath>..\..\..\DualityPrimitives.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.8.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\AtlasSpriteConverter.cs" />
-    <Compile Include="Actions\ImportAtlas.cs" />
-    <Compile Include="Actions\SpriteOperations.cs" />
-    <Compile Include="AtlasViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AtlasViewer.Designer.cs">
-      <DependentUpon>AtlasViewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FellSkyEditorPlugin.cs" />
+    <Compile Include="FellSkyCommonPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FellSky.Common\FellSky.Common.csproj">
-      <Project>{66453490-a7c9-4f22-aa96-a4aae39f3b9b}</Project>
-      <Name>FellSky.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AtlasViewer.resx">
-      <DependentUpon>AtlasViewer.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Resources\SpriteAtlas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir "$(SolutionDir)../../Plugins"
 copy "$(TargetPath)" "$(SolutionDir)../../Plugins"
 copy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)../../Plugins"
-xcopy /Y "$(TargetDir)*.editor.xml" "$(SolutionDir)../../Plugins"</PostBuildEvent>
+xcopy /Y "$(TargetDir)*.core.xml" "$(SolutionDir)../../Plugins"</PostBuildEvent>
   </PropertyGroup>
 </Project>
