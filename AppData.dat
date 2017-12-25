@@ -1,8 +1,35 @@
 ﻿<root dataType="Struct" type="Duality.DualityAppData" id="129723834">
-  <appName dataType="String">Duality Application</appName>
-  <authorName dataType="String">Unknown</authorName>
-  <customData />
-  <localUserData dataType="Bool">true</localUserData>
+  <appName dataType="String">Fell Sky</appName>
+  <authorName dataType="String">Ian David Garcia</authorName>
+  <customData dataType="Struct" type="FellSky.FellSkyAppData" id="427169525">
+    <_x003C_GuiFonts_x003E_k__BackingField dataType="Array" type="FellSky.Gui.FontDef[]" id="1100841590">
+      <item dataType="Struct" type="FellSky.Gui.FontDef" id="2824927200">
+        <_x003C_Family_x003E_k__BackingField dataType="String">Titillium</_x003C_Family_x003E_k__BackingField>
+        <_x003C_Filename_x003E_k__BackingField dataType="String">Data\Fonts\TitilliumWeb-Regular.ttf</_x003C_Filename_x003E_k__BackingField>
+        <_x003C_Style_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontStyle" name="Normal" value="0" />
+        <_x003C_Weight_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontWeight" name="Normal" value="0" />
+      </item>
+      <item dataType="Struct" type="FellSky.Gui.FontDef" id="3573126030">
+        <_x003C_Family_x003E_k__BackingField dataType="String">Titillium</_x003C_Family_x003E_k__BackingField>
+        <_x003C_Filename_x003E_k__BackingField dataType="String">Data\Fonts\TitilliumWeb-Bold.ttf</_x003C_Filename_x003E_k__BackingField>
+        <_x003C_Style_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontStyle" name="Normal" value="0" />
+        <_x003C_Weight_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontWeight" name="Bold" value="1" />
+      </item>
+      <item dataType="Struct" type="FellSky.Gui.FontDef" id="117753596">
+        <_x003C_Family_x003E_k__BackingField dataType="String">Titillium</_x003C_Family_x003E_k__BackingField>
+        <_x003C_Filename_x003E_k__BackingField dataType="String">Data\Fonts\TitilliumWeb-Italic.ttf</_x003C_Filename_x003E_k__BackingField>
+        <_x003C_Style_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontStyle" name="Italic" value="1" />
+        <_x003C_Weight_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontWeight" name="Normal" value="0" />
+      </item>
+      <item dataType="Struct" type="FellSky.Gui.FontDef" id="4053440274">
+        <_x003C_Family_x003E_k__BackingField dataType="String">Titillium</_x003C_Family_x003E_k__BackingField>
+        <_x003C_Filename_x003E_k__BackingField dataType="String">Data\Fonts\TitilliumWeb-BoldItalic.ttf</_x003C_Filename_x003E_k__BackingField>
+        <_x003C_Style_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontStyle" name="Italic" value="1" />
+        <_x003C_Weight_x003E_k__BackingField dataType="Enum" type="LibRocketNet.FontWeight" name="Bold" value="1" />
+      </item>
+    </_x003C_GuiFonts_x003E_k__BackingField>
+  </customData>
+  <localUserData dataType="Bool">false</localUserData>
   <multisampleBackBuffer dataType="Bool">true</multisampleBackBuffer>
   <physicsFixedTime dataType="Bool">false</physicsFixedTime>
   <physicsVelThreshold dataType="Float">0.8333333</physicsVelThreshold>
@@ -12,7 +39,7 @@
   <startScene dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Scene]]">
     <contentPath dataType="String">Data\MainScene.Scene.res</contentPath>
   </startScene>
-  <version dataType="UInt">125</version>
+  <version dataType="UInt">259</version>
   <websiteUrl dataType="String">http://www.adamslair.net</websiteUrl>
 </root>
 <!-- XmlFormatterBase Document Separator -->

@@ -9,5 +9,11 @@ namespace FellSky
 {
     public class FellSkyCorePlugin: CorePlugin
     {
+        protected override void InitPlugin()
+        {
+            if(DualityApp.ExecEnvironment == DualityApp.ExecutionEnvironment.Launcher)
+                Gui.GuiCore.InitializeGui();
+            base.InitPlugin();
+        }
     }
 }

@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Duality">
@@ -35,6 +37,10 @@
     </Reference>
     <Reference Include="DualityPrimitives">
       <HintPath>..\..\..\DualityPrimitives.dll</HintPath>
+    </Reference>
+    <Reference Include="LibRocketNet, Version=1.0.5968.23162, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\LibRocketNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,18 +52,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Beam.cs" />
+    <Compile Include="Components\Bullet.cs" />
     <Compile Include="Components\CameraController.cs" />
     <Compile Include="Components\DustParticleController.cs" />
     <Compile Include="Components\FollowTransform.cs" />
+    <Compile Include="Components\Graphics\BeamRenderer.cs" />
     <Compile Include="Components\Graphics\ParticleEffect.cs" />
+    <Compile Include="Components\PlayerController.cs" />
     <Compile Include="Components\PlayerShipController.cs" />
+    <Compile Include="Components\Projectile.cs" />
     <Compile Include="Components\Ship.cs" />
     <Compile Include="Components\Graphics\SpriteGlow.cs" />
     <Compile Include="Components\Thruster.cs" />
     <Compile Include="Components\Weapon.cs" />
+    <Compile Include="Components\WeaponMount.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Events\DamageEvent.cs" />
+    <Compile Include="Events\RequestReloadEvent.cs" />
+    <Compile Include="FellSkyAppData.cs" />
     <Compile Include="FellSkyCorePlugin.cs" />
+    <Compile Include="FellSkyUserData.cs" />
+    <Compile Include="Gui\FontDef.cs" />
+    <Compile Include="Gui\GuiCore.cs" />
+    <Compile Include="Gui\LRDRenderInterface.cs" />
+    <Compile Include="Gui\LRDSystemInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ItemArchetype.cs" />
+    <Compile Include="Resources\WeaponArchtype.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FellSky.Common\FellSky.Common.csproj">

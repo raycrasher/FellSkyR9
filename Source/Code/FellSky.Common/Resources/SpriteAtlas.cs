@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FellSky.Resources
 {
+    [Duality.Editor.EditorHintCategory("Fell Sky")]
     public class SpriteAtlas: Resource
     {
         public class Item

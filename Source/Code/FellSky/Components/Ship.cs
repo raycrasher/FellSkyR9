@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FellSky.Events;
 
 namespace FellSky.Components
 {
     [Duality.Editor.EditorHintCategory("Ship")]
-    public class Ship : Component, ICmpUpdatable
+    public class Ship : Component, ICmpUpdatable, IEventHandler<Events.RequestReloadEvent>
     {
         public float ForwardSpeed { get; set; } = 20;
         public float ManeuverSpeed { get; set; } = 4;
@@ -27,6 +28,7 @@ namespace FellSky.Components
         {
             get => DesiredTorque < 0 ? Rotation.CCW : DesiredTorque > 0 ? Rotation.CW : Rotation.None;
         }
+        public string GivenName { get; set; }
 
         void ICmpUpdatable.OnUpdate()
         {
@@ -67,6 +69,14 @@ namespace FellSky.Components
                     rigidBody.ApplyLocalForce(TurnSpeed * 40);
                     break;
             }*/
+        }
+
+        void IEventHandler<RequestReloadEvent>.HandleEvent(object source, RequestReloadEvent data)
+        {
+            if (data.Weapon == null)
+                return;
+            // TODO: add inventory check for ammo
+            data.ReloadAmount = data.Weapon.MagazineSize;
         }
     }
 }
