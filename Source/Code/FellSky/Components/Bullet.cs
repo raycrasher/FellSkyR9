@@ -29,7 +29,7 @@ namespace FellSky.Components
 
         public ContentRef<Prefab> HitExplosion { get; set; }
 
-        public void OnCollisionBegin(Component sender, CollisionEventArgs args)
+        void ICmpCollisionListener.OnCollisionBegin(Component sender, CollisionEventArgs args)
         {
             if (HitExplosion.IsAvailable)
             {
@@ -40,29 +40,28 @@ namespace FellSky.Components
             {
                 Damage = Damage,
                 CollisionData = args,
-                Projectile = this
+                Projectile = this,
+                Target = args.CollideWith
             };
-            if (args is RigidBodyCollisionEventArgs rb)
-                evt.Target = rb.OtherShape.UserData as GameObject;
-
             args.CollideWith.FireEvent(this, evt);
+            this.GameObj.DisposeLater();
         }
 
-        public void OnCollisionEnd(Component sender, CollisionEventArgs args)
+        void ICmpCollisionListener.OnCollisionEnd(Component sender, CollisionEventArgs args)
         {
         }
 
-        public void OnCollisionSolve(Component sender, CollisionEventArgs args)
+        void ICmpCollisionListener.OnCollisionSolve(Component sender, CollisionEventArgs args)
         {
 
         }
 
-        private bool OnCollide(CollisionFilterData collision)
+        bool OnCollide(CollisionFilterData collision)
         {
             return collision.OtherGameObj != Owner;
         }
 
-        public void OnUpdate()
+        void ICmpUpdatable.OnUpdate()
         {
             Age += Time.TimeMult;
             if (Age > Lifetime * FadeoutPercent)
@@ -83,7 +82,7 @@ namespace FellSky.Components
             body.LinearVelocity = GameObj.Transform.GetWorldVector(new Vector2(MuzzleVelocity, 0)) + Muzzle?.Vel.Xy ?? Vector2.Zero;
         }
 
-        public void OnInit(InitContext context)
+        void ICmpInitializable.OnInit(InitContext context)
         {
             if (context == InitContext.Activate)
             {
@@ -98,7 +97,7 @@ namespace FellSky.Components
             }
         }
 
-        public void OnShutdown(ShutdownContext context)
+        void ICmpInitializable.OnShutdown(ShutdownContext context)
         {
         }
     }

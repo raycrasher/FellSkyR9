@@ -15,24 +15,11 @@ namespace FellSky.Components
         [DontSerialize]
         ElementDocument _dashBoard;
 
+        public bool IsWarping { get; private set; }
+
         void ICmpUpdatable.OnUpdate()
         {
-            if (DualityApp.Keyboard.KeyHit(FellSkyUserData.Data.Bindings.Dashboard))
-            {
-                if(_dashBoard==null)
-                    _dashBoard = GuiCore.Context.LoadDocument("Data/Gui/Dashboard.rml");
-                if (!_dashBoard.IsVisible)
-                {
-                    _dashBoard.Show();
-                    if (_dashBoard.GetElementById("playerShipName") is Element e)
-                        e.InnerRml = GameObj.GetComponent<PlayerShipController>()?.ControlledShip?.GivenName ?? "Unnamed Ship";
-
-
-                } else
-                {
-                    _dashBoard.Hide();
-                }
-            }
+            var obj = new GameObject();
         }
     }
 }

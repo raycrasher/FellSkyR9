@@ -21,8 +21,6 @@ namespace FellSky.Gui
 
         public static Context Context => _context;
 
-        public event Action ExecuteWhenContextAvailable;
-
         private static LRDRenderInterface _renderInterface;
         private static LRDSystemInterface _systemInterface;
 

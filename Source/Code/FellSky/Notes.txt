@@ -1,0 +1,91 @@
+﻿Boarding mini-game:
+	- Consists of a list of battle reports from boarding party.
+	- Boarding party radios status
+	- If party spots something interesting, the game presents choices from which player must pick
+		Example points of interest:
+			Room with sapients
+			Engine room
+			Bridge
+			Corridor
+			~etc~
+	- When combat occurs, it happens in real-time
+	- UI displays status of team members
+		- Team member UI reflects health and damage
+		- Health is a oscilloscope-type health meter, which shows condition via color, and stress via frequency of beats
+	- Player can give commands, like:
+		- Go silent / Go loud
+		- Set rules of engagement (who is designated lethal or nonlethal)
+			- target, hostiles, non-hostiles
+		- trigger special commands
+			- cut life support, 
+			- fire support from ship, 
+			- trigger planted explosives
+			- retreat
+
+		
+
+
+
+
+
+Dynamic Tech Generation
+
+Tech progress is driven by:
+	Scanning anomalies during exploration or combat.
+		Anomalies can be found in 
+			- space
+			- surface
+			- events during battle
+	Buying tech and intel
+	Scanning items
+	Questioning sapients
+	Interrogating prisoners
+
+
+Exploring finds Anomalies.
+Scanning Anomalies generates Data.
+Research on Data generates Breakthroughs.
+
+A Research Breakthrough gives a choice of three:
+
+1. Upgrade to a stat of an existing Applied tech
+2. Progress to a Tech's level.
+3. A new Tech
+
+Tech:
+	
+
+Applications:
+	Power
+	Propulsion
+	Life Support
+	Armor
+	Beam Weaponry
+	Bolt weaponry
+	Kinetic Weaponry
+	Warhead Weaponry
+	Shielding
+	Point Defense
+	Computing
+	Passive sensors
+	Active sensors
+
+	
+	Miniaturization
+	Production
+	Material Harvesting
+	Material Processing
+
+	Alien Language
+	Alien Biology
+	Alien Psychology
+	Alien Sociology
+	
+Fields of Research
+	Energy
+	Biology
+	Materials
+	Mathematics
+	Xenology
+
+
