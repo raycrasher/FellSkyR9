@@ -3430,7 +3430,7 @@
                 <_size dataType="Int">62</_size>
               </children>
               <compList dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Component]]" id="2840942">
-                <_items dataType="Array" type="Duality.Component[]" id="738869634" length="4">
+                <_items dataType="Array" type="Duality.Component[]" id="738869634">
                   <item dataType="Struct" type="Duality.Components.Transform" id="1617736947">
                     <active dataType="Bool">true</active>
                     <gameobj dataType="ObjectRef">1788735538</gameobj>
@@ -3439,12 +3439,29 @@
                     <active dataType="Bool">true</active>
                     <gameobj dataType="ObjectRef">1788735538</gameobj>
                   </item>
+                  <item dataType="Struct" type="FellSky.Components.Inventory" id="3691787964">
+                    <_x003C_Items_x003E_k__BackingField dataType="Struct" type="System.Collections.Generic.Dictionary`2[[Duality.ContentRef`1[[FellSky.Resources.ItemArchetype]]],[System.Int32]]" id="4225153448" surrogate="true">
+                      <header />
+                      <body>
+                        <keys dataType="Array" type="System.Object[]" id="1819864748">
+                          <item dataType="Struct" type="Duality.ContentRef`1[[FellSky.Resources.ItemArchetype]]">
+                            <contentPath dataType="String">Data\ShipParts\Weapons\Cannon1.WeaponArchtype.res</contentPath>
+                          </item>
+                        </keys>
+                        <values dataType="Array" type="System.Object[]" id="2037248438">
+                          <item dataType="Int">30</item>
+                        </values>
+                      </body>
+                    </_x003C_Items_x003E_k__BackingField>
+                    <active dataType="Bool">true</active>
+                    <gameobj dataType="ObjectRef">1788735538</gameobj>
+                  </item>
                   <item dataType="Struct" type="FellSky.Components.Ship" id="4274376604">
                     <active dataType="Bool">true</active>
                     <gameobj dataType="ObjectRef">1788735538</gameobj>
                   </item>
                 </_items>
-                <_size dataType="Int">3</_size>
+                <_size dataType="Int">4</_size>
               </compList>
               <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="1064262668" surrogate="true">
                 <header />
@@ -3453,11 +3470,13 @@
                     <item dataType="ObjectRef">206011686</item>
                     <item dataType="Type" id="1804817516" value="Duality.Components.Physics.RigidBody" />
                     <item dataType="Type" id="2550740022" value="FellSky.Components.Ship" />
+                    <item dataType="Type" id="290482488" value="FellSky.Components.Inventory" />
                   </keys>
                   <values dataType="Array" type="System.Object[]" id="365666526">
                     <item dataType="ObjectRef">1617736947</item>
                     <item dataType="ObjectRef">4228082971</item>
                     <item dataType="ObjectRef">4274376604</item>
+                    <item dataType="ObjectRef">3691787964</item>
                   </values>
                 </body>
               </compMap>

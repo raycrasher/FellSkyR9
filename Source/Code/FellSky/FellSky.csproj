@@ -59,6 +59,7 @@
     <Compile Include="Components\FollowTransform.cs" />
     <Compile Include="Components\Graphics\BeamRenderer.cs" />
     <Compile Include="Components\Graphics\ParticleEffect.cs" />
+    <Compile Include="Components\Inventory.cs" />
     <Compile Include="Components\PlayerController.cs" />
     <Compile Include="Components\PlayerShipController.cs" />
     <Compile Include="Components\Projectile.cs" />

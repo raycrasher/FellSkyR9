@@ -16,7 +16,7 @@ namespace FellSky
 
     public enum EventScope
     {
-        Object, Children, Descendants
+        Object, Children, Descendants, Parents
     }
 
     public static class EventExtensions
@@ -33,6 +33,11 @@ namespace FellSky
                 case EventScope.Children:
                     foreach (var cmp2 in obj.GetComponentsInChildren<IEventHandler<T>>())
                         cmp2.HandleEvent(source, data);
+                    break;
+                case EventScope.Parents:
+                    if (obj.Parent == null) return;
+                    obj.Parent.IterateComponents<IEventHandler<T>>(c => c.HandleEvent(source, data));
+                    obj.Parent.FireEvent(source, data, EventScope.Parents);
                     break;
             }
         }

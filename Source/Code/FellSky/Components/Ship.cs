@@ -6,12 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FellSky.Events;
+using FellSky.Resources;
 
 namespace FellSky.Components
 {
     [Duality.Editor.EditorHintCategory("Ship")]
     public class Ship : Component, ICmpUpdatable, IEventHandler<Events.RequestReloadEvent>
     {
+        
+
         public float ForwardSpeed { get; set; } = 20;
         public float ManeuverSpeed { get; set; } = 4;
         public float TurnSpeed { get; set; } = 8;

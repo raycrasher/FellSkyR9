@@ -11,5 +11,9 @@ namespace FellSky.Resources
     public class ItemArchetype: Resource
     {
         public string DisplayName { get; set; }
+        public override string ToString()
+        {
+            return DisplayName ?? Name ?? base.ToString();
+        }
     }
 }
