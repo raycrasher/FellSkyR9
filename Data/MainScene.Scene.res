@@ -12,7 +12,7 @@
         <_size dataType="Int">0</_size>
       </children>
       <compList dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Component]]" id="3749228142">
-        <_items dataType="Array" type="Duality.Component[]" id="3099797154" length="8">
+        <_items dataType="Array" type="Duality.Component[]" id="3099797154">
           <item dataType="Struct" type="Duality.Components.Transform" id="3190824903">
             <active dataType="Bool">true</active>
             <angle dataType="Float">0</angle>
@@ -77,7 +77,7 @@
             <minZ dataType="Float">300</minZ>
             <smoothness dataType="Float">1</smoothness>
             <targetObj dataType="Struct" type="Duality.GameObject" id="1788735538">
-              <active dataType="Bool">true</active>
+              <active dataType="Bool">false</active>
               <children dataType="Struct" type="System.Collections.Generic.List`1[[Duality.GameObject]]" id="1930227632">
                 <_items dataType="Array" type="Duality.GameObject[]" id="3154323900" length="128">
                   <item dataType="Struct" type="Duality.GameObject" id="1774387341">
@@ -7274,7 +7274,6 @@
             <zoomSpeed dataType="Float">20</zoomSpeed>
           </item>
           <item dataType="Struct" type="FellSky.Components.PlayerController" id="1155283232">
-            <_x003C_IsWarping_x003E_k__BackingField dataType="Bool">false</_x003C_IsWarping_x003E_k__BackingField>
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">3361823494</gameobj>
           </item>
@@ -7290,12 +7289,26 @@
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">3361823494</gameobj>
           </item>
-          <item dataType="Struct" type="FellSky.Components.UI.DashboardController" id="2193731021">
+          <item dataType="Struct" type="FellSky.Components.UI.RefitScreen" id="497272974">
+            <_x003C_DocumentPath_x003E_k__BackingField dataType="String">Data/Gui/RefitScreen.rml</_x003C_DocumentPath_x003E_k__BackingField>
+            <_x003C_ToggleKey_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="F1" value="10" />
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">3361823494</gameobj>
+          </item>
+          <item dataType="Struct" type="FellSky.Components.UI.DashboardScreen" id="208204736">
+            <_x003C_DocumentPath_x003E_k__BackingField dataType="String">Data/Gui/Dashboard.rml</_x003C_DocumentPath_x003E_k__BackingField>
+            <_x003C_ToggleKey_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="Tab" value="52" />
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">3361823494</gameobj>
+          </item>
+          <item dataType="Struct" type="FellSky.Components.UI.InventoryScreen" id="1188520455">
+            <_x003C_DocumentPath_x003E_k__BackingField dataType="String">Data/Gui/Inventory.rml</_x003C_DocumentPath_x003E_k__BackingField>
+            <_x003C_ToggleKey_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="F2" value="11" />
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">3361823494</gameobj>
           </item>
         </_items>
-        <_size dataType="Int">6</_size>
+        <_size dataType="Int">8</_size>
       </compList>
       <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="3466068396" surrogate="true">
         <header />
@@ -7306,7 +7319,9 @@
             <item dataType="Type" id="1253385270" value="FellSky.Components.PlayerController" />
             <item dataType="Type" id="1702629944" value="FellSky.Components.CameraController" />
             <item dataType="Type" id="1134456082" value="FellSky.Components.PlayerShipController" />
-            <item dataType="Type" id="1588407076" value="FellSky.Components.UI.DashboardController" />
+            <item dataType="Type" id="1588407076" value="FellSky.Components.UI.RefitScreen" />
+            <item dataType="Type" id="2263204238" value="FellSky.Components.UI.DashboardScreen" />
+            <item dataType="Type" id="195208176" value="FellSky.Components.UI.InventoryScreen" />
           </keys>
           <values dataType="Array" type="System.Object[]" id="1403044830">
             <item dataType="ObjectRef">3190824903</item>
@@ -7314,7 +7329,9 @@
             <item dataType="ObjectRef">1155283232</item>
             <item dataType="ObjectRef">523915198</item>
             <item dataType="ObjectRef">1593010763</item>
-            <item dataType="ObjectRef">2193731021</item>
+            <item dataType="ObjectRef">497272974</item>
+            <item dataType="ObjectRef">208204736</item>
+            <item dataType="ObjectRef">1188520455</item>
           </values>
         </body>
       </compMap>

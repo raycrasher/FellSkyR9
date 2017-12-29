@@ -10,7 +10,7 @@ using LibRocketNet;
 namespace FellSky.Components
 {
     [Duality.Editor.EditorHintCategory("Ship")]
-    public class PlayerShipController : Component, ICmpUpdatable, ICmpInitializable, IEventHandler<LibRocketNet.ScriptEventArgs>
+    public class PlayerShipController : Component, ICmpUpdatable, ICmpInitializable
     {
         //private ShipWeapon[] _weapons;
 
@@ -103,16 +103,6 @@ namespace FellSky.Components
             DualityApp.Mouse.ButtonUp -= OnMouseButtonUp;
         }
 
-        void IEventHandler<ScriptEventArgs>.HandleEvent(object source, ScriptEventArgs data)
-        {
-            switch (data.Script)
-            {
-                case "GetPlayerShipName":
-                    if (data.TargetElement != null && ControlledShip != null)
-                        data.TargetElement.InnerRml = ControlledShip.GivenName;
-                    break;
-            }
-            
-        }
+
     }
 }

@@ -17,8 +17,9 @@ namespace FellSky
 
         public class KeyBindings
         {
-            public Key RefitShip { get; set; } = Key.F1;
             public Key Dashboard { get; set; } = Key.Tab;
+            public Key RefitShip { get; set; } = Key.F1;            
+            public Key Inventory { get; set; } = Key.F2;
         }
 
         public KeyBindings Bindings {

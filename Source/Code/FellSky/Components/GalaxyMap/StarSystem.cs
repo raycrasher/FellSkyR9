@@ -14,5 +14,6 @@ namespace FellSky.Components.GalaxyMap
     public class StarSystem: Component
     {
         public GameObject CentralObject { get; set; }
+        internal Planet[] Planets { get; set; }
     }
 }
