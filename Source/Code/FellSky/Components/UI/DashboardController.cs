@@ -13,12 +13,16 @@ namespace FellSky.Components.UI
     [RequiredComponent(typeof(PlayerShipController))]
     public class DashboardController : Component, ICmpInitializable
     {
+        [DontSerialize]
         private ElementDocument _dashBoard;
+        [DontSerialize]
+        private int lastFrame = 0;
 
         private void OnDashboardKeyDown(object sender, KeyboardKeyEventArgs e)
         {
-            if (e.Key ==FellSkyUserData.Data.Bindings.Dashboard)
+            if (e.Key == FellSkyUserData.Data.Bindings.Dashboard && e.IsPressed && Time.FrameCount > lastFrame + 30)
             {
+                lastFrame = Time.FrameCount;
                 if (_dashBoard == null)
                     _dashBoard = GuiCore.Context.LoadDocument("Data/Gui/Dashboard.rml");
                 if (!_dashBoard.IsVisible)

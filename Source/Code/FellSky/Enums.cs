@@ -10,4 +10,10 @@ namespace FellSky
     {
         None = 0, CW = -1, CCW = 1
     }
+
+    public enum HardpointSize
+    {
+        Small, Medium, Large, Huge
+    }
+
 }

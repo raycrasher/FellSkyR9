@@ -22,6 +22,13 @@ namespace FellSky
             base.InitPlugin();
         }
 
+        protected override void OnDisposePlugin()
+        {
+            if (DualityApp.ExecEnvironment == DualityApp.ExecutionEnvironment.Launcher)
+                Gui.GuiCore.ShutdownGui();
+            base.OnDisposePlugin();
+        }
+
         public Scene CurrentScene { get; private set; }
         public static FellSkyCore Instance { get; private set; }
     }

@@ -64,6 +64,7 @@
     <Compile Include="Components\Graphics\BeamRenderer.cs" />
     <Compile Include="Components\Graphics\HardpointRenderer.cs" />
     <Compile Include="Components\Graphics\ParticleEffect.cs" />
+    <Compile Include="Components\Hardpoint.cs" />
     <Compile Include="Components\Inventory.cs" />
     <Compile Include="Components\PlayerController.cs" />
     <Compile Include="Components\PlayerShipController.cs" />

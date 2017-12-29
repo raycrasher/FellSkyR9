@@ -13,7 +13,7 @@ namespace FellSky.Components
     [RequiredComponent(typeof(Transform))]
     public class WeaponMount: Component
     {
-        public WeaponSize Size { get; set; }
+        public HardpointSize Size { get; set; }
         public void Mount(WeaponArchtype type)
         {
             

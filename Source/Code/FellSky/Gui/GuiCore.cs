@@ -25,6 +25,12 @@ namespace FellSky.Gui
         private static LRDSystemInterface _systemInterface;
 
         public override float BoundRadius => 200;
+
+        public static void ShutdownGui()
+        {
+            LibRocketNet.Core.Shutdown();
+        }
+
         public ContentRef<DrawTechnique> DrawTechnique
         {
             get => _technique;

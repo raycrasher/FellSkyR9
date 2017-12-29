@@ -4,8 +4,9 @@
 </head>
 <body id="mainmenu">
 
-<h1 id="Title"><span id="playerShipName" style="color: #1155ff88;"/></h1>
+  <h1 id="Title"><span id="playerShipName" style="color: #1155ff88;"/></h1>
 
+  <ul id="aaaa"></ul>
 
 
 </body>
