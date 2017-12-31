@@ -11,7 +11,7 @@ using FellSky.Resources;
 namespace FellSky.Components
 {
     [Duality.Editor.EditorHintCategory("Ship")]
-    public class Ship : Component, ICmpUpdatable, IEventHandler<Events.RequestReloadEvent>
+    public class Ship : Component, ICmpUpdatable, IEventHandler<Events.RequestReloadEvent>, ICmpInitializable, IEventHandler<ShipRefitUpdateEvent>
     {
         
 
@@ -80,6 +80,27 @@ namespace FellSky.Components
                 return;
             // TODO: add inventory check for ammo
             data.ReloadAmount = data.Weapon.MagazineSize;
+        }
+
+        void ICmpInitializable.OnInit(InitContext context)
+        {
+            if(context == InitContext.Activate)
+            {
+                OnRefit();
+            }
+        }
+
+        void ICmpInitializable.OnShutdown(ShutdownContext context)
+        {            
+        }
+
+        void IEventHandler<ShipRefitUpdateEvent>.HandleEvent(object source, ShipRefitUpdateEvent data)
+            => OnRefit();
+
+        private void OnRefit()
+        {
+            foreach (var wpn in GameObj.GetComponentsDeep<Weapon>())
+                wpn.Owner = GameObj;
         }
     }
 }

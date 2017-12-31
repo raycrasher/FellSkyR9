@@ -13,26 +13,39 @@ namespace FellSky.Components
 {
     public enum WeaponStatus
     {
-        Disabled, Ready, ContinuousFiring, Cycling, BurstCycling, Reloading
+        Disabled, Ready, ContinuousFiring, Cycling, Reloading
     }
 
     [Duality.Editor.EditorHintCategory("Ship")]
-    public class Weapon : Component, ICmpUpdatable
+    public class Weapon : Component, ICmpUpdatable, ICmpInitializable
     {
-        private int _currentBarrel;
+        public class Muzzle
+        {
+            [Duality.Editor.EditorHintRange(0,1)]
+            public float FirePercent { get; set; }
+            public Transform Transform { get; set; }
+        }
+
         private float _timer;
+        private bool[] _muzzleState;
+        private bool _defaultMuzzleState;
+        [DontSerialize]
+        private GameObject _owner;
 
         public WeaponStatus Status { get; set; }
         public ContentRef<Prefab> Projectile { get; set; }
 
-        public GameObject[] Barrels { get; set; }
-        public Transform[] Muzzles { get; set; }
-        public GameObject Owner { get; set; }
+        public Muzzle[] Muzzles { get; set; }
+
+        [Duality.Editor.EditorHintFlags(Duality.Editor.MemberFlags.Invisible)]
+        public GameObject Owner {
+            get => _owner;
+            set => _owner = value;
+        }
 
         public bool IsFiring { get; set; }
-        public bool LinkedFire { get; set; }
-        public float FireRate { get; set; } = 1; // 1 shot or burst per second
-        public float BurstFireRate { get; set; } = 4f;  // 4 shots per second
+        public float CycleTime { get; set; } = 1;
+
         public float ReloadTime { get; set; }
         public int AmmoPerShot { get; set; } = 1;
         public int AmmoInMagazine { get; set; } = 100;
@@ -46,52 +59,42 @@ namespace FellSky.Components
             switch (Status)
             {
                 case WeaponStatus.Ready:
-
                     if (IsFiring)
                     {
-
-                        if (sprite != null)
-                        {
-                            sprite.AnimPaused = false;
-                            sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.Loop;
-                        }
-                        Fire();
-                    }
-                    else
-                    {
-                        if (sprite != null)
-                        {
-                            if (sprite.IsAnimationRunning)
-                                sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.Once;
-                            else
-                            {
-                                sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.FixedSingle;
-                                sprite.AnimTime = 0;
-                            }
-                            //sprite.AnimPaused = true;
-                            //sprite.AnimTime = 0;
-                        }
+                        for (int i = 0; i < _muzzleState.Length; i++)
+                            _muzzleState[i] = false;
+                        _defaultMuzzleState = false;
+                        if (sprite != null)                        
+                            sprite.AnimTime = 0;
+                        Status = WeaponStatus.Cycling;
                     }
                     break;
                 case WeaponStatus.Cycling:
-                    if (FireRate <= 0)
+                    if(Muzzles == null || Muzzles.Length == 0 && !_defaultMuzzleState)                    
+                        Fire(-1);
+                    else
                     {
-                        Status = WeaponStatus.Ready;
-                        break;
+                        for(int i = 0; i < _muzzleState.Length; i++)
+                        {
+                            if (!_muzzleState[i] && _timer > Muzzles[i].FirePercent)
+                                Fire(i);
+                        }
                     }
-                    _timer += (1 / FireRate) * Time.TimeMult;
-                    if (_timer >= 1)
-                        Status = WeaponStatus.Ready;
-                    break;
-                case WeaponStatus.BurstCycling:
-                    if (BurstFireRate <= 0)
+
+                    if (_timer > CycleTime)
                     {
-                        Status = WeaponStatus.Ready;
-                        break;
+                        _timer = 0;
+                        if (AmmoInMagazine <= 0)
+                            Status = WeaponStatus.Reloading;
+                        else
+                            Status = WeaponStatus.Ready;
                     }
-                    _timer += (1 / BurstFireRate) * Time.TimeMult;
-                    if (_timer >= 1)
-                        Status = WeaponStatus.Ready;
+                    else
+                    {
+                        _timer += Time.TimeMult * Time.SPFMult;
+                    }
+                    if (sprite != null)
+                        sprite.AnimTime = _timer;
                     break;
                 case WeaponStatus.Reloading:
                     var evt = new RequestReloadEvent(this);
@@ -117,8 +120,8 @@ namespace FellSky.Components
                     break;
             }
         }
-
-        public void Fire()
+        
+        public void Fire(int index)
         {
             if (Projectile == null)
             {
@@ -126,45 +129,55 @@ namespace FellSky.Components
                 DisabledReason = "Invalid projectile";
                 return;
             }
-
-            FireAgain:
-
-            if (_currentBarrel >= Muzzles.Length)
+            if(index >= _muzzleState.Length)
             {
-                _timer = 0f;
-                Status = WeaponStatus.Cycling;
-                _currentBarrel = 0;
+                Status = WeaponStatus.Disabled;
+                DisabledReason = "Program err";
                 return;
             }
 
-            Transform muzzle;
-            if (Muzzles != null)
-                muzzle = Muzzles[_currentBarrel];
-            else
-                muzzle = GameObj.Transform;
+            Transform xform;
 
-            var projectile = Projectile.Res.Instantiate(muzzle.Pos, muzzle.Angle);
+            if (index < 0)
+            {
+                xform = GameObj.Transform;
+                _defaultMuzzleState = true;
+            }
+            else
+            {
+                xform = Muzzles[index].Transform;
+                _muzzleState[index] = true;
+            }
+            
+            var projectile = Projectile.Res.Instantiate(xform.Pos, xform.Angle);
             var projComponent = projectile.GetComponent<Projectile>();
             projComponent.Owner = Owner;
-            projComponent.Muzzle = muzzle;
+            projComponent.Muzzle = xform;
             projComponent.Weapon = GameObj;
             projComponent.OnFire();
 
             Scene.Current.AddObject(projectile);
             AmmoInMagazine--;
-            _currentBarrel++;
+        }
 
-            if (AmmoInMagazine <= 0)
+        void ICmpInitializable.OnInit(InitContext context)
+        {
+            if (context == InitContext.Activate)
             {
-                _timer = 0;
-                Status = WeaponStatus.Reloading;
-                return;
+                var sprite = GameObj.GetComponent<AnimSpriteRenderer>();
+                if (sprite != null)
+                {
+                    sprite.AnimDuration = CycleTime;
+                    sprite.AnimTime = 0;
+                    sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.FixedSingle;
+                }
+                _muzzleState = new bool[Muzzles?.Length ?? 0];
             }
+        }
 
-            _timer = 0;
-            Status = WeaponStatus.BurstCycling;
-            if (LinkedFire)
-                goto FireAgain;
+        void ICmpInitializable.OnShutdown(ShutdownContext context)
+        {
+            
         }
     }
 }
