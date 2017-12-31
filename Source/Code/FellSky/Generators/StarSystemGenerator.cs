@@ -1,5 +1,4 @@
-﻿using DiceNotation;
-using FellSky.Components.GalaxyMap;
+﻿using FellSky.Components.GalaxyMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +73,7 @@ namespace FellSky.Generators
 
     public class StarSystemGenerator
     {
+        /*
         static DiceExpression NumPlanetsDice = Dice.Parse("2d4");
         static DiceExpression DistanceFromStar = Dice.Parse("3d4");
 
@@ -92,12 +92,13 @@ namespace FellSky.Generators
                 }
                 var planet = new Planet
                 {
-                    Distance = DistanceFromStar.Roll().Value,
+                    //Distance = DistanceFromStar.Roll().Value,
 
                 };
             }
 
             return system;
         }
+        */
     }
 }

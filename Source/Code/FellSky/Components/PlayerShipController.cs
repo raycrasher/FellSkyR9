@@ -6,12 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibRocketNet;
+using FellSky.Events;
 
 namespace FellSky.Components
 {
     [Duality.Editor.EditorHintCategory("Ship")]
-    public class PlayerShipController : Component, ICmpUpdatable, ICmpInitializable
+    [RequiredComponent(typeof(Ship))]
+    public class PlayerShipController : Component, ICmpUpdatable, ICmpInitializable, IEventHandler<ShipRefitUpdateEvent>
     {
+        [DontSerialize]
+        private Turret[] _turrets;
+
+        [DontSerialize]
+        private MousePointer _mousePointer;
+
         //private ShipWeapon[] _weapons;
 
         public Key ThrustUp { get; set; } = Key.W;
@@ -23,44 +31,56 @@ namespace FellSky.Components
         public Key Boost { get; set; } = Key.Space;
 
 
-
-        public Ship ControlledShip { get; set; }
-
         void ICmpUpdatable.OnUpdate()
         {
-            if (ControlledShip == null)
-                return;
             ControlThrust();
-            ControlWapons();
+            ControlWeapons();
         }
 
-        private void ControlWapons()
+        private void ControlWeapons()
         {
+            var xform = _mousePointer?.GameObj?.Transform;
+            if (xform != null)
+            {
+                foreach (var turret in _turrets)
+                {
+                    turret.Target = xform;
+                    if (DualityApp.Mouse.ButtonPressed(MouseButton.Right))
+                    {
+                        var wpn = turret.GameObj?.GetComponent<Weapon>();
+                        if (wpn != null)
+                            wpn.IsFiring = true;
+                    }
+                }
+            }
         }
 
         private void ControlThrust()
         {
+            var ship = GameObj.GetComponent<Ship>();
+            if (ship == null)
+                return;
             Vector2 speed = Vector2.Zero;
             var keyboard = DualityApp.Keyboard;
             if (keyboard.KeyPressed(ThrustDown))
-                speed.X = -ControlledShip.ManeuverSpeed;
+                speed.X = -ship.ManeuverSpeed;
             else if (keyboard.KeyPressed(ThrustUp))
-                speed.X = ControlledShip.ForwardSpeed;
+                speed.X = ship.ForwardSpeed;
 
             if (keyboard.KeyPressed(StrafeLeft))
-                speed.Y = -ControlledShip.ManeuverSpeed;
+                speed.Y = -ship.ManeuverSpeed;
             else if (keyboard.KeyPressed(StrafeRight))
-                speed.Y = ControlledShip.ManeuverSpeed;
+                speed.Y = ship.ManeuverSpeed;
 
-            ControlledShip.ThrustVector = ControlledShip.GameObj.Transform.GetWorldVector(speed);
+            ship.ThrustVector = ship.GameObj.Transform.GetWorldVector(speed);
 
-            ControlledShip.IsBoosting = keyboard.KeyPressed(Boost);
+            ship.IsBoosting = keyboard.KeyPressed(Boost);
             if (keyboard.KeyPressed(TurnCCW))
-                ControlledShip.DesiredTorque = -ControlledShip.TurnSpeed;
+                ship.DesiredTorque = -ship.TurnSpeed;
             else if (keyboard.KeyPressed(TurnCW))
-                ControlledShip.DesiredTorque = ControlledShip.TurnSpeed;
+                ship.DesiredTorque = ship.TurnSpeed;
             else
-                ControlledShip.DesiredTorque = 0;
+                ship.DesiredTorque = 0;
         }
 
         void ICmpInitializable.OnInit(InitContext context)
@@ -71,8 +91,9 @@ namespace FellSky.Components
                     //_weapons = ControlledShip.GameObj.GetComponentsDeep<ShipWeapon>().ToArray();
                 DualityApp.Mouse.ButtonDown += OnMouseButtonDown;
                 DualityApp.Mouse.ButtonUp += OnMouseButtonUp;
-
+                _mousePointer = GameObj?.ParentScene?.FindComponent<MousePointer>();
             }
+            UpdateRefit();
         }
 
         private void OnMouseButtonDown(object sender, MouseButtonEventArgs e)
@@ -103,6 +124,12 @@ namespace FellSky.Components
             DualityApp.Mouse.ButtonUp -= OnMouseButtonUp;
         }
 
+        void IEventHandler<ShipRefitUpdateEvent>.HandleEvent(object source, ShipRefitUpdateEvent data)
+            => UpdateRefit();
 
+        public void UpdateRefit()
+        {
+            _turrets = GameObj.GetComponentsDeep<Turret>().ToArray();
+        }
     }
 }

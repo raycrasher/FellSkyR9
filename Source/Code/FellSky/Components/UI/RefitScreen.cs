@@ -10,7 +10,6 @@ namespace FellSky.Components.UI
 {
     [Duality.Editor.EditorHintCategory("Fell Sky")]
     [RequiredComponent(typeof(PlayerController))]
-    [RequiredComponent(typeof(PlayerShipController))]
     public class RefitScreen : ScreenBase
     {
         [DontSerialize]
@@ -22,14 +21,13 @@ namespace FellSky.Components.UI
 
         protected override void Init(InitContext context)
         {
-            base.Init(context);
-
             var hardpointsElem = Document.GetElementById("hardPoints");
-            var ship = GameObj.GetComponent<PlayerShipController>().ControlledShip;
-            if (hardpointsElem!=null && ship != null)
+            var playerShip = GameObj?.ParentScene?.FindComponent<PlayerShipController>()?.GameObj?.GetComponent<Ship>();
+            //var ship = GameObj.GetComponent<PlayerShipController>().ControlledShip;
+            if (hardpointsElem!=null && playerShip != null)
             {
                 hardpointsElem.InnerRml = "";
-                _hardpoints = ship.GameObj.GetComponentsInChildren<Hardpoint>().ToArray();
+                _hardpoints = playerShip.GameObj.GetComponentsInChildren<Hardpoint>().ToArray();
                 foreach(var hp in _hardpoints)
                 {
                     var elem = new Element("li");

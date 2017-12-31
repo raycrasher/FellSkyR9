@@ -34,9 +34,6 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DiceNotation, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdCanHack.DiceNotation.0.2.0\lib\portable-net45+sl50+win+wpa81+wp80\DiceNotation.dll</HintPath>
-    </Reference>
     <Reference Include="Duality">
       <HintPath>..\..\..\Duality.dll</HintPath>
     </Reference>
@@ -70,12 +67,14 @@
     <Compile Include="Components\Graphics\ParticleEffect.cs" />
     <Compile Include="Components\Hardpoint.cs" />
     <Compile Include="Components\Inventory.cs" />
+    <Compile Include="Components\MousePointer.cs" />
     <Compile Include="Components\PlayerController.cs" />
     <Compile Include="Components\PlayerShipController.cs" />
     <Compile Include="Components\Projectile.cs" />
     <Compile Include="Components\Ship.cs" />
     <Compile Include="Components\Graphics\SpriteGlow.cs" />
     <Compile Include="Components\Thruster.cs" />
+    <Compile Include="Components\Turret.cs" />
     <Compile Include="Components\UI\DashboardScreen.cs" />
     <Compile Include="Components\UI\InventoryScreen.cs" />
     <Compile Include="Components\UI\RefitScreen.cs" />
@@ -86,6 +85,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="Events\DamageEvent.cs" />
     <Compile Include="Events\RequestReloadEvent.cs" />
+    <Compile Include="Events\ShipRefitUpdateEvent.cs" />
     <Compile Include="FellSkyAppData.cs" />
     <Compile Include="FellSkyCore.cs" />
     <Compile Include="FellSkyUserData.cs" />
@@ -107,9 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Notes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

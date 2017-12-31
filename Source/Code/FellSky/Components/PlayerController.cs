@@ -23,7 +23,6 @@ namespace FellSky.Components
 
         void ICmpUpdatable.OnUpdate()
         {
-            var obj = new GameObject();
         }
     }
 }

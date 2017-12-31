@@ -48,7 +48,7 @@ namespace FellSky.Components.UI
 
         protected virtual void OnKeyDown(object sender, KeyboardKeyEventArgs e)
         {
-            if (e.Key == ToggleKey && e.IsPressed && Time.FrameCount > _lastFrame + 30)
+            if (e.Key == ToggleKey && e.IsPressed && Time.FrameCount > _lastFrame + 5)
             {
                 if (IsVisible)
                     Hide();
@@ -81,13 +81,35 @@ namespace FellSky.Components.UI
             DisplayedScreen = null;
         }
 
-        protected virtual void Init(InitContext context) { }
+        protected virtual void Init(InitContext context) {
+        }
         protected virtual void Shutdown(ShutdownContext context) { }
         protected virtual void HandleEvent(object source, ScriptEventArgs data) { }
 
         void IEventHandler<ScriptEventArgs>.HandleEvent(object source, ScriptEventArgs data) => HandleEvent(source, data);
-        void ICmpInitializable.OnInit(InitContext context) => Init(context);
-        void ICmpInitializable.OnShutdown(ShutdownContext context) => Shutdown(context);
-
+        void ICmpInitializable.OnInit(InitContext context)
+        {
+            if (context == InitContext.Activate)
+            {
+                if (DualityApp.ExecEnvironment == DualityApp.ExecutionEnvironment.Launcher)
+                {
+                    if (_document == null)
+                        _document = GuiCore.Context.LoadDocument(DocumentPath);
+                    Init(context);
+                }
+                DualityApp.Keyboard.KeyDown += OnKeyDown;
+            }
+        }
+        void ICmpInitializable.OnShutdown(ShutdownContext context)
+        {
+            if (context == ShutdownContext.Deactivate) { 
+                DualityApp.Keyboard.KeyDown -= OnKeyDown;
+                if (DualityApp.ExecEnvironment == DualityApp.ExecutionEnvironment.Launcher && _document != null)
+                {
+                    Hide();
+                    Shutdown(context);
+                }
+            }
+        }
     }
 }

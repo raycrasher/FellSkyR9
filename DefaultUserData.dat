@@ -1,15 +1,16 @@
 ﻿<root dataType="Struct" type="Duality.DualityUserData" id="129723834">
   <customData dataType="Struct" type="FellSky.FellSkyUserData" id="427169525">
-    <_x003C_Bindings_x003E_k__BackingField dataType="Struct" type="FellSky.FellSkyUserData+KeyBindings" id="1100841590">
+    <bindings dataType="Struct" type="FellSky.FellSkyUserData+KeyBindings" id="1100841590">
       <_x003C_Dashboard_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="Tab" value="52" />
+      <_x003C_Inventory_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="F2" value="11" />
       <_x003C_RefitShip_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="F1" value="10" />
-    </_x003C_Bindings_x003E_k__BackingField>
+    </bindings>
   </customData>
   <gfxAAQuality dataType="Enum" type="Duality.AAQuality" name="High" value="0" />
-  <gfxHeight dataType="Int">900</gfxHeight>
-  <gfxMode dataType="Enum" type="Duality.ScreenMode" name="Window" value="0" />
+  <gfxHeight dataType="Int">1360</gfxHeight>
+  <gfxMode dataType="Enum" type="Duality.ScreenMode" name="Native" value="3" />
   <gfxRefreshMode dataType="Enum" type="Duality.RefreshMode" name="AdaptiveVSync" value="3" />
-  <gfxWidth dataType="Int">1600</gfxWidth>
+  <gfxWidth dataType="Int">768</gfxWidth>
   <sfxEffectVol dataType="Float">1</sfxEffectVol>
   <sfxMasterVol dataType="Float">1</sfxMasterVol>
   <sfxMusicVol dataType="Float">1</sfxMusicVol>

@@ -11,7 +11,7 @@ namespace FellSky.Components.UI
 {
     [Duality.Editor.EditorHintCategory("Fell Sky")]
     [RequiredComponent(typeof(PlayerController))]
-    [RequiredComponent(typeof(PlayerShipController))]
+    
     public class InventoryScreen : ScreenBase
     {
         public InventoryScreen(Key toggleKey, string docPath) 

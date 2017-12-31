@@ -28,6 +28,7 @@ namespace FellSky.Gui
 
         public static void ShutdownGui()
         {
+            _context?.UnloadAllDocuments();
             LibRocketNet.Core.Shutdown();
         }
 
