@@ -55,7 +55,7 @@
           <customMat />
           <flipMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+FlipMode" name="None" value="0" />
           <gameobj dataType="ObjectRef">3469426251</gameobj>
-          <offset dataType="Int">-100</offset>
+          <offset dataType="Int">-20</offset>
           <pixelGrid dataType="Bool">false</pixelGrid>
           <rect dataType="Struct" type="Duality.Rect">
             <H dataType="Float">11</H>

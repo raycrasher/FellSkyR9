@@ -11,7 +11,12 @@ using FellSky.Resources;
 namespace FellSky.Components
 {
     [Duality.Editor.EditorHintCategory("Ship")]
-    public class Ship : Component, ICmpUpdatable, IEventHandler<Events.RequestReloadEvent>, ICmpInitializable, IEventHandler<ShipRefitUpdateEvent>
+    public class Ship : Component, 
+        ICmpUpdatable,
+        ICmpInitializable,
+        IEventHandler<RequestReloadEvent>,
+        IEventHandler<ShipRefitUpdateEvent>,
+        IEventHandler<DeathEvent>
     {
         
 
@@ -101,6 +106,11 @@ namespace FellSky.Components
         {
             foreach (var wpn in GameObj.GetComponentsDeep<Weapon>())
                 wpn.Owner = GameObj;
+        }
+
+        void IEventHandler<DeathEvent>.HandleEvent(object source, DeathEvent data)
+        {
+            GameObj.DisposeLater();
         }
     }
 }

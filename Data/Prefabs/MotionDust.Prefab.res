@@ -95,7 +95,7 @@
           <gameobj dataType="ObjectRef">1292555357</gameobj>
           <linearDrag dataType="Float">0.3</linearDrag>
           <material dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
-            <contentPath dataType="String">Data\Sprites\effects.Material.res</contentPath>
+            <contentPath dataType="String">Data\Sprites\effects_add.Material.res</contentPath>
           </material>
           <particleSize dataType="Struct" type="Duality.Vector2">
             <X dataType="Float">5</X>
@@ -7953,7 +7953,6 @@
                   </item>
                   <item dataType="Struct" type="FellSky.Components.PlayerShipController" id="1593010763">
                     <_x003C_Boost_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="Space" value="51" />
-                    <_x003C_ControlledShip_x003E_k__BackingField dataType="ObjectRef">4274376604</_x003C_ControlledShip_x003E_k__BackingField>
                     <_x003C_StrafeLeft_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="Q" value="99" />
                     <_x003C_StrafeRight_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="E" value="87" />
                     <_x003C_ThrustDown_x003E_k__BackingField dataType="Enum" type="Duality.Input.Key" name="S" value="101" />

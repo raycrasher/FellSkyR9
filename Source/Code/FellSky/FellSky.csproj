@@ -57,7 +57,9 @@
     <Compile Include="Components\Beam.cs" />
     <Compile Include="Components\Bullet.cs" />
     <Compile Include="Components\CameraController.cs" />
+    <Compile Include="Components\DeleteAfterDelay.cs" />
     <Compile Include="Components\DustParticleController.cs" />
+    <Compile Include="Components\SpawnOnDeath.cs" />
     <Compile Include="Components\FollowTransform.cs" />
     <Compile Include="Components\GalaxyMap\GalaxyMapController.cs" />
     <Compile Include="Components\GalaxyMap\Planet.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Components\Graphics\HardpointRenderer.cs" />
     <Compile Include="Components\Graphics\ParticleEffect.cs" />
     <Compile Include="Components\Hardpoint.cs" />
+    <Compile Include="Components\Health.cs" />
     <Compile Include="Components\Inventory.cs" />
     <Compile Include="Components\MousePointer.cs" />
     <Compile Include="Components\PlayerController.cs" />
@@ -84,6 +87,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Events\DamageEvent.cs" />
+    <Compile Include="Events\DeathEvent.cs" />
     <Compile Include="Events\RequestReloadEvent.cs" />
     <Compile Include="Events\ShipRefitUpdateEvent.cs" />
     <Compile Include="FellSkyAppData.cs" />

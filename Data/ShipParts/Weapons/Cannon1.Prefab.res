@@ -107,7 +107,7 @@
           <customMat />
           <flipMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+FlipMode" name="Vertical" value="2" />
           <gameobj dataType="ObjectRef">1776481491</gameobj>
-          <offset dataType="Int">-10</offset>
+          <offset dataType="Int">-21</offset>
           <pixelGrid dataType="Bool">false</pixelGrid>
           <rect dataType="Struct" type="Duality.Rect">
             <H dataType="Float">22</H>
@@ -228,7 +228,7 @@
           <_timer dataType="Float">0</_timer>
           <_x003C_AmmoInMagazine_x003E_k__BackingField dataType="Int">100</_x003C_AmmoInMagazine_x003E_k__BackingField>
           <_x003C_AmmoPerShot_x003E_k__BackingField dataType="Int">1</_x003C_AmmoPerShot_x003E_k__BackingField>
-          <_x003C_CycleTime_x003E_k__BackingField dataType="Float">0.25</_x003C_CycleTime_x003E_k__BackingField>
+          <_x003C_CycleTime_x003E_k__BackingField dataType="Float">0.5</_x003C_CycleTime_x003E_k__BackingField>
           <_x003C_DisabledReason_x003E_k__BackingField />
           <_x003C_IsFiring_x003E_k__BackingField dataType="Bool">false</_x003C_IsFiring_x003E_k__BackingField>
           <_x003C_MagazineSize_x003E_k__BackingField dataType="Int">100</_x003C_MagazineSize_x003E_k__BackingField>
