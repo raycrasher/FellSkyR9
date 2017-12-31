@@ -30,6 +30,8 @@ namespace FellSky.Components
 
         void ICmpUpdatable.OnUpdate()
         {
+            if (Target == null)
+                return;
             var xform = GameObj.Transform;
             var speed = Time.TimeMult * MathF.DegToRad(TraverseSpeed);
             var offset = Target.Pos.Xy - xform.Pos.Xy;
@@ -64,7 +66,12 @@ namespace FellSky.Components
                     }
                 }
 
-                var halfArc = MathF.DegToRad(TraverseArc) / 2;
+                Hardpoint hp = GameObj.Parent?.GetComponent<Hardpoint>();
+                float halfArc;
+                if (hp != null)
+                    halfArc = MathF.DegToRad(hp.Traverse) / 2;
+                else
+                    halfArc = MathF.DegToRad(TraverseArc) / 2;
                 var rel = currentRot + deltaAngle;
                 GameObj.Transform.RelativeAngle = MathF.Clamp(rel, -halfArc, halfArc);
             }

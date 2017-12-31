@@ -21,6 +21,7 @@ namespace FellSky.Editor
         private bool[] _tabLoadStatus;
         private Dictionary<ContentRef<Pixmap>, Image> _images;
         private Button[] _animatedButtons;
+        private int _animTick = 0;
 
         public int Fps { get; private set; } = 8;
 
@@ -48,6 +49,7 @@ namespace FellSky.Editor
 
         private void Animate()
         {
+            _animTick++;
             var anims = _animatedButtons;
             if (anims != null) {
                 foreach(var btn in anims)
@@ -123,7 +125,7 @@ namespace FellSky.Editor
 
                     btn.Paint += (o, e) =>
                     {
-                        int frame = (DateTime.Now.Millisecond / Fps) % sprite.Item.Indexes.Length;
+                        int frame = _animTick % sprite.Item.Indexes.Length;
 
                         var rect = pixmapAtlas[sprite.Item.Indexes[frame]];
                         int x = btn.Width / 2 - (int)rect.W / 2;

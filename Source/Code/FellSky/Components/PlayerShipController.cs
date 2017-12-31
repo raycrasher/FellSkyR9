@@ -45,12 +45,9 @@ namespace FellSky.Components
                 foreach (var turret in _turrets)
                 {
                     turret.Target = xform;
-                    if (DualityApp.Mouse.ButtonPressed(MouseButton.Right))
-                    {
-                        var wpn = turret.GameObj?.GetComponent<Weapon>();
-                        if (wpn != null)
-                            wpn.IsFiring = true;
-                    }
+                    var wpn = turret.GameObj?.GetComponent<Weapon>();
+                    if (wpn != null)
+                        wpn.IsFiring = DualityApp.Mouse.ButtonPressed(MouseButton.Right);
                 }
             }
         }

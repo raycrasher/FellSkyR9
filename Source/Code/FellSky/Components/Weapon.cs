@@ -46,17 +46,31 @@ namespace FellSky.Components
             switch (Status)
             {
                 case WeaponStatus.Ready:
-                    if (sprite != null)
-                    {
-                        sprite.AnimPaused = true;
-                        sprite.AnimTime = 0;
-                    }
 
                     if (IsFiring)
                     {
+
                         if (sprite != null)
+                        {
                             sprite.AnimPaused = false;
+                            sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.Loop;
+                        }
                         Fire();
+                    }
+                    else
+                    {
+                        if (sprite != null)
+                        {
+                            if (sprite.IsAnimationRunning)
+                                sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.Once;
+                            else
+                            {
+                                sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.FixedSingle;
+                                sprite.AnimTime = 0;
+                            }
+                            //sprite.AnimPaused = true;
+                            //sprite.AnimTime = 0;
+                        }
                     }
                     break;
                 case WeaponStatus.Cycling:

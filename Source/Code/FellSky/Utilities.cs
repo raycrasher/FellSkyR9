@@ -1,4 +1,5 @@
 ﻿using Duality;
+using Duality.Components.Renderers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,27 @@ namespace FellSky
         {
             foreach (var i in items)
                 yield return i;
+        }
+
+        public static string GetRmlMarkup(this AnimSpriteRenderer renderer)
+        {
+            var tex = renderer?.SharedMaterial.Res?.MainTexture.Res;
+            if (tex == null || tex.BasePixmap.Res == null)
+                return "";
+            var texPath = tex.Path;
+            var atlas = tex.BasePixmap.Res.Atlas;
+            if (atlas == null || atlas.Count <= 0)
+                return $"<img source=\"{texPath}\" />";
+            var rect = atlas[0];
+            return $"<img source=\"{texPath}\" coords=\"{rect.X}px, {rect.Y}px, {rect.RightX}px, {rect.BottomY}px\"/>";
+        }
+
+        public static string GetRmlMarkup(this SpriteRenderer renderer)
+        {
+            var tex = renderer?.SharedMaterial.Res?.MainTexture.Res;
+            if (tex == null || tex.BasePixmap.Res == null)
+                return "";
+            return $"<img source=\"{tex.Path}\" />";
         }
     }
 }

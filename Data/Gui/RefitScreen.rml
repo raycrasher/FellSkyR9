@@ -1,8 +1,18 @@
 <rml>
 <head>
 <link type="text/rcss" href="Global.rcss"/>
+<style>
+	.hardpoint {
+		display: block;
+		position: absolute;
+		border-color:#FFFFFFFF;
+		border-thickness:1px;
+		background-color: #00003388;
+		width: 150px;
+	}
+</style>
 </head>
-<body id="mainmenu">
+<body id="refit">
 
   <h1 id="Title">Refit</h1>
   <h3 id="playerShipName" style="color: #1155ff88;"/>

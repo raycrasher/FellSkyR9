@@ -58,7 +58,12 @@ namespace FellSky.Components
 
         bool OnCollide(CollisionFilterData collision)
         {
-            return collision.OtherGameObj != Owner;
+            if (collision.OtherGameObj == Owner)
+                return false;
+            var proj = collision.OtherGameObj?.GetComponent<Projectile>();
+            if (proj != null)
+                return false;
+            return true;
         }
 
         void ICmpUpdatable.OnUpdate()
