@@ -37,6 +37,9 @@ namespace FellSky.GfxTool
                                 case "namecheck":
                                     DoNameCheck(Directory.GetFiles(dir, "*.png", SearchOption.AllDirectories));
                                     break;
+                                case "pack":
+                                    DoPack(Directory.GetFiles(dir, "*.png", SearchOption.AllDirectories));
+                                    break;
                             }
                             
                         }
@@ -74,10 +77,48 @@ namespace FellSky.GfxTool
                 case "trimpng":
                     DoTrim(args.Skip(1).ToArray());
                     break;
+                case "pack":
+                    DoPack(args.Skip(1).ToArray());
+                    break;
                 default:
                     Console.WriteLine("Invalid command. [ gif, trimpng ]");
                     break;
             }
+        }
+
+        private static void DoPack(string[] files)
+        {
+            var padding = new Size(2, 2);
+            // load and sort rects
+            List<PackItem> rects = files.Select(f=> {
+                using(Bitmap bmp = new Bitmap(f))
+                {
+                    return new PackItem { Filename = f, Rect = new Rectangle(Point.Empty, bmp.Size + padding) };
+                }
+            }).OrderByDescending(r=>Math.Max(r.Rect.Width, r.Rect.Height)).ToList();
+            Packer.Fit(rects);
+
+            using (var outFile = new StreamWriter("spritesheet.csv", false))
+            using (var bmp = new Bitmap(rects.Max(r => r.Fit?.Width ?? 0), rects.Max(r => r.Fit?.Height ?? 0), PixelFormat.Format32bppArgb))
+            using (var grd = Graphics.FromImage(bmp))
+            {
+                grd.Clear(Color.FromArgb(0, 0, 0, 0));
+                foreach (var rect in rects)
+                {
+                    if (rect.Fit == null)
+                    {
+                        Console.WriteLine($"File {rect.Filename} has not been fitted properly.");
+                        continue;
+                    }
+                    outFile.WriteLine($"{rect.Filename.Replace(',', '_')},{rect.Fit.Value.X},{rect.Fit.Value.Y},{rect.Fit.Value.Width},{rect.Fit.Value.Height}");
+                    using (var srcBmp = new Bitmap(rect.Filename))
+                    {
+                        grd.DrawImage(srcBmp, rect.Fit.Value.X + 1, rect.Fit.Value.Y + 1);
+                    }
+                }
+                bmp.Save("spritesheet.png", ImageFormat.Png);
+            }
+            
         }
 
         private static void DoTrim(IList<string> args)

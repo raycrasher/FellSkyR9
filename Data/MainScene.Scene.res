@@ -24,19 +24,27 @@
             <ignoreParent dataType="Bool">false</ignoreParent>
             <parentTransform />
             <pos dataType="Struct" type="Duality.Vector3">
-              <X dataType="Float">62.0811157</X>
-              <Y dataType="Float">-20.8074589</Y>
-              <Z dataType="Float">-283.3724</Z>
+              <X dataType="Float">0.00117383385</X>
+              <Y dataType="Float">-9.79683E-05</Y>
+              <Z dataType="Float">-500</Z>
             </pos>
             <posAbs dataType="Struct" type="Duality.Vector3">
-              <X dataType="Float">62.0811157</X>
-              <Y dataType="Float">-20.8074589</Y>
-              <Z dataType="Float">-283.3724</Z>
+              <X dataType="Float">0.00117383385</X>
+              <Y dataType="Float">-9.79683E-05</Y>
+              <Z dataType="Float">-500</Z>
             </posAbs>
             <scale dataType="Float">1</scale>
             <scaleAbs dataType="Float">1</scaleAbs>
-            <vel dataType="Struct" type="Duality.Vector3" />
-            <velAbs dataType="Struct" type="Duality.Vector3" />
+            <vel dataType="Struct" type="Duality.Vector3">
+              <X dataType="Float">-6.8278E-05</X>
+              <Y dataType="Float">5.69848953E-06</Y>
+              <Z dataType="Float">0.00674591074</Z>
+            </vel>
+            <velAbs dataType="Struct" type="Duality.Vector3">
+              <X dataType="Float">-6.8278E-05</X>
+              <Y dataType="Float">5.69848953E-06</Y>
+              <Z dataType="Float">0.00674591074</Z>
+            </velAbs>
           </item>
           <item dataType="Struct" type="Duality.Components.Camera" id="3480688609">
             <active dataType="Bool">true</active>
@@ -7913,8 +7921,19 @@
                 <Z dataType="Float">0</Z>
               </val>
             </item>
+            <item dataType="Struct" type="Duality.Resources.PrefabLink+VarMod">
+              <childIndex dataType="Struct" type="System.Collections.Generic.List`1[[System.Int32]]" id="477706142">
+                <_items dataType="Array" type="System.Int32[]" id="59080298"></_items>
+                <_size dataType="Int">0</_size>
+              </childIndex>
+              <componentType dataType="ObjectRef">588282812</componentType>
+              <prop dataType="MemberInfo" id="2521096084" value="P:FellSky.Components.Graphics.ParticleEffect:ParticleMaterial" />
+              <val dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
+                <contentPath dataType="String">Data\Sprites\effects_add.Material.res</contentPath>
+              </val>
+            </item>
           </_items>
-          <_size dataType="Int">1</_size>
+          <_size dataType="Int">2</_size>
         </changes>
         <obj dataType="ObjectRef">1593679806</obj>
         <prefab dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
@@ -8482,8 +8501,8 @@
     <item dataType="ObjectRef">2357702042</item>
     <item dataType="ObjectRef">1057685353</item>
     <item dataType="ObjectRef">2815573529</item>
-    <item dataType="ObjectRef">3335339266</item>
     <item dataType="ObjectRef">2042228908</item>
+    <item dataType="ObjectRef">3335339266</item>
     <item dataType="ObjectRef">3757266295</item>
     <item dataType="ObjectRef">1760390299</item>
     <item dataType="ObjectRef">8578363</item>
