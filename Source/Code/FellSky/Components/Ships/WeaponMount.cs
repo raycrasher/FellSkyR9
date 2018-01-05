@@ -14,9 +14,25 @@ namespace FellSky.Components
     public class WeaponMount: Component
     {
         public HardpointSize Size { get; set; }
+
+        public GameObject MountedObject => GameObj.Children.FirstOrDefault();
+
         public void Mount(WeaponArchtype type)
         {
-            
+            if (type == null)
+                return;
+            var child = MountedObject;
+            if (child == null)
+            {
+
+            }
+            else
+            {
+                child.Parent = null;
+                child.DisposeLater();
+                var newChild = type.Prefab.Res.Instantiate();
+                newChild.Parent = GameObj;
+            }
         }
     }
 }
