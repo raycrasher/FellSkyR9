@@ -83,6 +83,7 @@
     <Compile Include="Components\Ships\Turret.cs" />
     <Compile Include="Components\UI\DashboardScreen.cs" />
     <Compile Include="Components\UI\InventoryScreen.cs" />
+    <Compile Include="Components\UI\MainMenu.cs" />
     <Compile Include="Components\UI\RefitScreen.cs" />
     <Compile Include="Components\UI\ScreenBase.cs" />
     <Compile Include="Components\Ships\Weapon.cs" />

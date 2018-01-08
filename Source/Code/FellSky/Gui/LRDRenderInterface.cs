@@ -19,7 +19,7 @@ namespace FellSky.Gui
         Dictionary<IntPtr, ContentRef<Texture>> _textures = new Dictionary<IntPtr, ContentRef<Texture>>();
         private Rect _scissorRegion;
 
-        VertexC1P3T2[] _vtxBuffer = new VertexC1P3T2[500];
+        VertexC1P3T2[] _vtxBuffer = new VertexC1P3T2[2048];
 
 
         public float ZIndex { get; set; }
@@ -119,7 +119,7 @@ namespace FellSky.Gui
         private unsafe VertexC1P3T2[] GetVertices(Vertex* vertices, int numVertices, int* indices, int numIndices)
         {
             if (numVertices > _vtxBuffer.Length)
-                _vtxBuffer = new VertexC1P3T2[numIndices + numIndices / 2];
+                _vtxBuffer = new VertexC1P3T2[numIndices];
             float pixelOffset = MathF.RoundToInt(_device.TargetSize.X) != (MathF.RoundToInt(_device.TargetSize.X) / 2) * 2 ? 0.5f : 0f;
             for (int i = 0; i < numIndices; i++)
             {

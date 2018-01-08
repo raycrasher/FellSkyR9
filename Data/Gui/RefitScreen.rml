@@ -10,6 +10,9 @@
 		background-color: #00003388;
 		width: 150px;
 	}
+	.hardpoint:hover{
+		
+	}
 </style>
 </head>
 <body id="refit">
