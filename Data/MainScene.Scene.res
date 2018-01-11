@@ -8024,8 +8024,31 @@
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">1626105793</gameobj>
           </item>
+          <item dataType="Struct" type="Steering.Agent" id="3767292629">
+            <active dataType="Bool">true</active>
+            <characteristics dataType="Struct" type="Steering.DefaultAgentCharacteristics" id="3708141039">
+              <aggressiveness dataType="Float">0.5</aggressiveness>
+            </characteristics>
+            <gameobj dataType="ObjectRef">1626105793</gameobj>
+            <radius dataType="Float">64</radius>
+            <sampler dataType="Struct" type="Steering.AdaptiveVelocitySampler" id="1007391136">
+              <layerCount dataType="Int">5</layerCount>
+              <outerLayerSampleCount dataType="Int">11</outerLayerSampleCount>
+            </sampler>
+            <target dataType="Struct" type="Steering.PointTarget" id="2177407101">
+              <location dataType="Struct" type="Duality.Vector2">
+                <X dataType="Float">1000</X>
+                <Y dataType="Float">1000</Y>
+              </location>
+            </target>
+            <toiHorizon dataType="Float">240</toiHorizon>
+          </item>
+          <item dataType="Struct" type="Steering.AgentAttributeTranslator" id="1120264247">
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">1626105793</gameobj>
+          </item>
         </_items>
-        <_size dataType="Int">5</_size>
+        <_size dataType="Int">7</_size>
       </compList>
       <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="1768131177" surrogate="true">
         <header />
@@ -8036,6 +8059,8 @@
             <item dataType="ObjectRef">1804817516</item>
             <item dataType="ObjectRef">73953316</item>
             <item dataType="Type" id="3603789028" value="FellSky.Components.SpawnOnDeath" />
+            <item dataType="Type" id="1157160470" value="Steering.Agent" />
+            <item dataType="Type" id="2119989984" value="Steering.AgentAttributeTranslator" />
           </keys>
           <values dataType="Array" type="System.Object[]" id="400112566">
             <item dataType="ObjectRef">1455107202</item>
@@ -8043,6 +8068,8 @@
             <item dataType="ObjectRef">4065453226</item>
             <item dataType="ObjectRef">3149569349</item>
             <item dataType="ObjectRef">3300777293</item>
+            <item dataType="ObjectRef">3767292629</item>
+            <item dataType="ObjectRef">1120264247</item>
           </values>
         </body>
       </compMap>

@@ -3884,6 +3884,9 @@
         <_items dataType="Array" type="Duality.Component[]" id="1649760068" length="4">
           <item dataType="Struct" type="FellSky.Components.UI.MainMenu" id="3851047502">
             <_x003C_DocumentPath_x003E_k__BackingField dataType="String">Data/Gui/MainMenu.rml</_x003C_DocumentPath_x003E_k__BackingField>
+            <_x003C_MainGameScene_x003E_k__BackingField dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Scene]]">
+              <contentPath dataType="String">Data\MainScene.Scene.res</contentPath>
+            </_x003C_MainGameScene_x003E_k__BackingField>
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">1529717402</gameobj>
           </item>
