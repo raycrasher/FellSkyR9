@@ -32,6 +32,9 @@ namespace FellSky.Components
         public bool RespondsToControl { get; set; } = true;
         public Vector2 Acceleration { get; private set; }
 
+        public IEnumerable<Weapon> Weapons => GameObj.GetComponentsDeep<Weapon>();
+        public IEnumerable<Turret> Turrets => GameObj.GetComponentsDeep<Turret>();
+
         public Rotation TurnDirection
         {
             get => DesiredTorque < 0 ? Rotation.CCW : DesiredTorque > 0 ? Rotation.CW : Rotation.None;
