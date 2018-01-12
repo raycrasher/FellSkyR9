@@ -17,22 +17,20 @@ namespace FellSky.Components
 
         public GameObject MountedObject => GameObj.Children.FirstOrDefault();
 
-        public void Mount(WeaponArchtype type)
+        public void Mount(WeaponArchtype type, bool deferShipRefitUpdateEvent = false)
         {
             if (type == null)
                 return;
             var child = MountedObject;
-            if (child == null)
-            {
-
-            }
-            else
+            if (child != null)
             {
                 child.Parent = null;
                 child.DisposeLater();
-                var newChild = type.Prefab.Res.Instantiate();
-                newChild.Parent = GameObj;
-            }
+            }            
+            var newChild = type.Prefab.Res.Instantiate();
+            newChild.Parent = GameObj;
+            if(!deferShipRefitUpdateEvent)
+                GameObj.Parent.FireEvent(this, new Events.ShipRefitUpdateEvent());
         }
     }
 }

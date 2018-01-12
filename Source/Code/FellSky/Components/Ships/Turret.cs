@@ -21,7 +21,7 @@ namespace FellSky.Components
         /// <summary>
         /// The traverse speed, in degrees/second
         /// </summary>
-        public float TraverseSpeed { get; set; } = 360;
+        public float TraverseSpeed { get; set; } = 30;
         public float Facing => GameObj.Transform.Angle;
         public Transform Target { get; set; }
 
