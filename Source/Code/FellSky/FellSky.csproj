@@ -44,6 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\LibRocketNet.dll</HintPath>
     </Reference>
+    <Reference Include="Steering.core">
+      <HintPath>..\..\..\Plugins\Steering.core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -62,6 +65,7 @@
     <Compile Include="Components\CameraController.cs" />
     <Compile Include="Components\DeleteAfterDelay.cs" />
     <Compile Include="Components\DustParticleController.cs" />
+    <Compile Include="Components\Ships\ShipAI.cs" />
     <Compile Include="Components\SpawnOnDeath.cs" />
     <Compile Include="Components\FollowTransform.cs" />
     <Compile Include="Components\GalaxyMap\GalaxyMapController.cs" />
@@ -83,6 +87,7 @@
     <Compile Include="Components\Ships\Turret.cs" />
     <Compile Include="Components\UI\DashboardScreen.cs" />
     <Compile Include="Components\UI\InventoryScreen.cs" />
+    <Compile Include="Components\UI\MainMenu.cs" />
     <Compile Include="Components\UI\RefitScreen.cs" />
     <Compile Include="Components\UI\ScreenBase.cs" />
     <Compile Include="Components\Ships\Weapon.cs" />

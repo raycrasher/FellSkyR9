@@ -12,6 +12,6 @@ void main()
 	float t = insideBox(gl_FragCoord.xy, clipRect.xy, clipRect.zw);
 	
 	//gl_FragColor = vec4(gl_Color.rgb, step(0.5, texel.a)) * t;
-	gl_FragColor = vec4(gl_Color.rgb, step(0.5, texel.a)) * gl_Color.a * t;
+	gl_FragColor = vec4(gl_Color.rgb, texel.a) * gl_Color.a * t;
 	
 }

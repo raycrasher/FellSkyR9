@@ -5,8 +5,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>D:\David\FellSky\DualityLauncher.exe</StartProgram>
-    <StartWorkingDirectory>D:\David\FellSky</StartWorkingDirectory>
+    <StartProgram>$(SolutionDir)..\..\DualityLauncher.exe</StartProgram>
+    <StartWorkingDirectory>$(SolutionDir)..\..\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartAction>Program</StartAction>

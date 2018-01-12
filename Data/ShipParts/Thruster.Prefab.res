@@ -16,7 +16,7 @@
               <item dataType="Struct" type="Duality.Components.Transform" id="2128956106">
                 <active dataType="Bool">true</active>
                 <angle dataType="Float">0</angle>
-                <angleAbs dataType="Float">0</angleAbs>
+                <angleAbs dataType="Float">4.712389</angleAbs>
                 <angleVel dataType="Float">0</angleVel>
                 <angleVelAbs dataType="Float">0</angleVelAbs>
                 <deriveAngle dataType="Bool">true</deriveAngle>
@@ -24,8 +24,8 @@
                 <ignoreParent dataType="Bool">false</ignoreParent>
                 <parentTransform dataType="Struct" type="Duality.Components.Transform" id="1239157637">
                   <active dataType="Bool">true</active>
-                  <angle dataType="Float">0</angle>
-                  <angleAbs dataType="Float">0</angleAbs>
+                  <angle dataType="Float">4.712389</angle>
+                  <angleAbs dataType="Float">4.712389</angleAbs>
                   <angleVel dataType="Float">0</angleVel>
                   <angleVelAbs dataType="Float">0</angleVelAbs>
                   <deriveAngle dataType="Bool">true</deriveAngle>
@@ -33,28 +33,28 @@
                   <ignoreParent dataType="Bool">false</ignoreParent>
                   <parentTransform />
                   <pos dataType="Struct" type="Duality.Vector3">
-                    <X dataType="Float">-65.99592</X>
-                    <Y dataType="Float">12.96</Y>
+                    <X dataType="Float">0</X>
+                    <Y dataType="Float">12.5</Y>
                     <Z dataType="Float">0</Z>
                   </pos>
                   <posAbs dataType="Struct" type="Duality.Vector3">
-                    <X dataType="Float">-65.99592</X>
-                    <Y dataType="Float">12.96</Y>
+                    <X dataType="Float">0</X>
+                    <Y dataType="Float">12.5</Y>
                     <Z dataType="Float">0</Z>
                   </posAbs>
-                  <scale dataType="Float">0.7267837</scale>
-                  <scaleAbs dataType="Float">0.7267837</scaleAbs>
+                  <scale dataType="Float">0.4</scale>
+                  <scaleAbs dataType="Float">0.4</scaleAbs>
                   <vel dataType="Struct" type="Duality.Vector3" />
                   <velAbs dataType="Struct" type="Duality.Vector3" />
                 </parentTransform>
                 <pos dataType="Struct" type="Duality.Vector3" />
                 <posAbs dataType="Struct" type="Duality.Vector3">
-                  <X dataType="Float">-65.99592</X>
-                  <Y dataType="Float">12.96</Y>
+                  <X dataType="Float">0</X>
+                  <Y dataType="Float">12.5</Y>
                   <Z dataType="Float">0</Z>
                 </posAbs>
                 <scale dataType="Float">1.37592518</scale>
-                <scaleAbs dataType="Float">1</scaleAbs>
+                <scaleAbs dataType="Float">0.5503701</scaleAbs>
                 <vel dataType="Struct" type="Duality.Vector3" />
                 <velAbs dataType="Struct" type="Duality.Vector3" />
               </item>
@@ -82,10 +82,10 @@
                 <offset dataType="Int">2</offset>
                 <pixelGrid dataType="Bool">false</pixelGrid>
                 <rect dataType="Struct" type="Duality.Rect">
-                  <H dataType="Float">20.1933117</H>
-                  <W dataType="Float">-100.96656</W>
-                  <X dataType="Float">20.1933117</X>
-                  <Y dataType="Float">-10.0966558</Y>
+                  <H dataType="Float">20.8738232</H>
+                  <W dataType="Float">-104.369118</W>
+                  <X dataType="Float">20.8738232</X>
+                  <Y dataType="Float">-10.4369116</Y>
                 </rect>
                 <rectMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+UVMode" name="Stretch" value="0" />
                 <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
@@ -129,7 +129,7 @@
               <item dataType="Struct" type="Duality.Components.Transform" id="2529802400">
                 <active dataType="Bool">true</active>
                 <angle dataType="Float">0</angle>
-                <angleAbs dataType="Float">0</angleAbs>
+                <angleAbs dataType="Float">4.712389</angleAbs>
                 <angleVel dataType="Float">0</angleVel>
                 <angleVelAbs dataType="Float">0</angleVelAbs>
                 <deriveAngle dataType="Bool">true</deriveAngle>
@@ -142,12 +142,12 @@
                   <Z dataType="Float">0</Z>
                 </pos>
                 <posAbs dataType="Struct" type="Duality.Vector3">
-                  <X dataType="Float">-72.99592</X>
-                  <Y dataType="Float">12.96</Y>
+                  <X dataType="Float">-4.59416825E-08</X>
+                  <Y dataType="Float">16.35259</Y>
                   <Z dataType="Float">0</Z>
                 </posAbs>
                 <scale dataType="Float">2.11783719</scale>
-                <scaleAbs dataType="Float">1.53920949</scaleAbs>
+                <scaleAbs dataType="Float">0.8471349</scaleAbs>
                 <vel dataType="Struct" type="Duality.Vector3" />
                 <velAbs dataType="Struct" type="Duality.Vector3" />
               </item>

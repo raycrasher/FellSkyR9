@@ -1,0 +1,44 @@
+<rml>
+<head>
+<link type="text/rcss" href="Global.rcss"/>
+<style>
+	.hardpoint {
+		display: block;
+		position: absolute;
+		border-color:#FFFFFFFF;
+		border-thickness:1px;
+		background-color: #00003388;
+		width: 150px;
+	}
+	
+	body {
+		margin: 20px;
+	}
+	
+	#menuitems {
+		margin: 40 50;
+	}
+	
+	#menuitems button {
+		display: block;
+		width: 200;
+		font-size: 18px;
+		text-align: left;
+	}
+</style>
+</head>
+<body>
+
+  <h1 id="title">Fell Sky</h1>
+  <h4 id="title-footer"></h4>
+  
+  <ul id="menuitems">
+	<button id="btn-continue" onclick="MainMenu_Continue">Continue</button>
+	<button id="btn-newgame" onclick="MainMenu_NewGame">New Game</button>
+	<button id="btn-options" onclick="MainMenu_Options">Options</button>
+	<button id="btn-exit" onclick="MainMenu_Exit">Exit</button>
+  </ul>
+
+
+</body>
+</rml>

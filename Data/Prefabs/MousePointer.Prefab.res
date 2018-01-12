@@ -35,7 +35,7 @@
           <velAbs dataType="Struct" type="Duality.Vector3" />
         </item>
         <item dataType="Struct" type="Duality.Components.Renderers.SpriteRenderer" id="3843039196">
-          <active dataType="Bool">true</active>
+          <active dataType="Bool">false</active>
           <colorTint dataType="Struct" type="Duality.Drawing.ColorRgba">
             <A dataType="Byte">255</A>
             <B dataType="Byte">255</B>
