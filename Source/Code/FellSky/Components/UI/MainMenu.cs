@@ -25,6 +25,9 @@ namespace FellSky.Components.UI
                 case "MainMenu_NewGame":
                     Scene.SwitchTo(MainGameScene);
                     break;
+                case "MainMenu_Exit":
+                    DualityApp.Terminate();
+                    break;
             }
         }
 

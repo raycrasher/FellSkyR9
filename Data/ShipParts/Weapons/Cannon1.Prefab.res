@@ -88,7 +88,7 @@
         <item dataType="ObjectRef">1605482900</item>
         <item dataType="Struct" type="Duality.Components.Renderers.AnimSpriteRenderer" id="3696714664">
           <active dataType="Bool">true</active>
-          <animDuration dataType="Float">0.25</animDuration>
+          <animDuration dataType="Float">0.5</animDuration>
           <animFirstFrame dataType="Int">0</animFirstFrame>
           <animFrameCount dataType="Int">1</animFrameCount>
           <animLoopMode dataType="Enum" type="Duality.Components.Renderers.AnimSpriteRenderer+LoopMode" name="FixedSingle" value="4" />
@@ -218,7 +218,7 @@
             <velAbs dataType="Struct" type="Duality.Vector3" />
           </_x003C_Target_x003E_k__BackingField>
           <_x003C_TraverseArc_x003E_k__BackingField dataType="Float">60</_x003C_TraverseArc_x003E_k__BackingField>
-          <_x003C_TraverseSpeed_x003E_k__BackingField dataType="Float">360</_x003C_TraverseSpeed_x003E_k__BackingField>
+          <_x003C_TraverseSpeed_x003E_k__BackingField dataType="Float">50</_x003C_TraverseSpeed_x003E_k__BackingField>
           <active dataType="Bool">true</active>
           <gameobj dataType="ObjectRef">1776481491</gameobj>
         </item>

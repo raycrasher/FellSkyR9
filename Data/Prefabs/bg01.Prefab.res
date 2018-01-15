@@ -20,17 +20,17 @@
           <ignoreParent dataType="Bool">false</ignoreParent>
           <parentTransform />
           <pos dataType="Struct" type="Duality.Vector3">
-            <X dataType="Float">301.747772</X>
-            <Y dataType="Float">-170.269653</Y>
-            <Z dataType="Float">10000</Z>
+            <X dataType="Float">0</X>
+            <Y dataType="Float">0</Y>
+            <Z dataType="Float">20000</Z>
           </pos>
           <posAbs dataType="Struct" type="Duality.Vector3">
-            <X dataType="Float">301.747772</X>
-            <Y dataType="Float">-170.269653</Y>
-            <Z dataType="Float">10000</Z>
+            <X dataType="Float">0</X>
+            <Y dataType="Float">0</Y>
+            <Z dataType="Float">20000</Z>
           </posAbs>
-          <scale dataType="Float">20</scale>
-          <scaleAbs dataType="Float">20</scaleAbs>
+          <scale dataType="Float">25</scale>
+          <scaleAbs dataType="Float">25</scaleAbs>
           <vel dataType="Struct" type="Duality.Vector3" />
           <velAbs dataType="Struct" type="Duality.Vector3" />
         </item>
