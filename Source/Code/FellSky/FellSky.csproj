@@ -69,7 +69,7 @@
     <Compile Include="Components\SpawnOnDeath.cs" />
     <Compile Include="Components\FollowTransform.cs" />
     <Compile Include="Components\GalaxyMap\GalaxyMapController.cs" />
-    <Compile Include="Components\GalaxyMap\Planet.cs" />
+    <Compile Include="Components\GalaxyMap\StarSystemObject.cs" />
     <Compile Include="Components\GalaxyMap\StarSystem.cs" />
     <Compile Include="Components\Graphics\BeamRenderer.cs" />
     <Compile Include="Components\Graphics\HardpointRenderer.cs" />
