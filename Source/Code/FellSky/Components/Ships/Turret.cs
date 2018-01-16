@@ -33,7 +33,7 @@ namespace FellSky.Components
             if (Target == null)
                 return;
             var xform = GameObj.Transform;
-            var speed = Time.TimeMult * MathF.DegToRad(TraverseSpeed);
+            var speed = Time.TimeMult * Time.SPFMult * MathF.DegToRad(TraverseSpeed);
             var offset = Target.Pos.Xy - xform.Pos.Xy;
             var currentAngle = GameObj.Transform.Angle;
             if (IsOmnidirectional)
