@@ -114,7 +114,7 @@
           <_x003C_HitExplosion_x003E_k__BackingField dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]" />
           <_x003C_Lifetime_x003E_k__BackingField dataType="Float">200</_x003C_Lifetime_x003E_k__BackingField>
           <_x003C_Muzzle_x003E_k__BackingField />
-          <_x003C_MuzzleVelocity_x003E_k__BackingField dataType="Float">10</_x003C_MuzzleVelocity_x003E_k__BackingField>
+          <_x003C_MuzzleVelocity_x003E_k__BackingField dataType="Float">20</_x003C_MuzzleVelocity_x003E_k__BackingField>
           <_x003C_Owner_x003E_k__BackingField />
           <_x003C_Weapon_x003E_k__BackingField />
           <active dataType="Bool">true</active>

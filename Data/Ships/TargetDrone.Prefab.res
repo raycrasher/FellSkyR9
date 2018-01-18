@@ -128,7 +128,7 @@
                     <item dataType="ObjectRef">3676319199</item>
                     <item dataType="Struct" type="Duality.Components.Renderers.AnimSpriteRenderer" id="1472583667">
                       <active dataType="Bool">true</active>
-                      <animDuration dataType="Float">0.25</animDuration>
+                      <animDuration dataType="Float">0.5</animDuration>
                       <animFirstFrame dataType="Int">0</animFirstFrame>
                       <animFrameCount dataType="Int">1</animFrameCount>
                       <animLoopMode dataType="Enum" type="Duality.Components.Renderers.AnimSpriteRenderer+LoopMode" name="FixedSingle" value="4" />
@@ -258,7 +258,7 @@
                         <velAbs dataType="Struct" type="Duality.Vector3" />
                       </_x003C_Target_x003E_k__BackingField>
                       <_x003C_TraverseArc_x003E_k__BackingField dataType="Float">60</_x003C_TraverseArc_x003E_k__BackingField>
-                      <_x003C_TraverseSpeed_x003E_k__BackingField dataType="Float">360</_x003C_TraverseSpeed_x003E_k__BackingField>
+                      <_x003C_TraverseSpeed_x003E_k__BackingField dataType="Float">50</_x003C_TraverseSpeed_x003E_k__BackingField>
                       <active dataType="Bool">true</active>
                       <gameobj dataType="ObjectRef">3847317790</gameobj>
                     </item>
@@ -351,7 +351,7 @@
                 <customMat />
                 <flipMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+FlipMode" name="None" value="0" />
                 <gameobj dataType="ObjectRef">2742964753</gameobj>
-                <offset dataType="Int">0</offset>
+                <offset dataType="Int">-20</offset>
                 <pixelGrid dataType="Bool">false</pixelGrid>
                 <rect dataType="Struct" type="Duality.Rect">
                   <H dataType="Float">50</H>
@@ -480,10 +480,10 @@
                       <offset dataType="Int">2</offset>
                       <pixelGrid dataType="Bool">false</pixelGrid>
                       <rect dataType="Struct" type="Duality.Rect">
-                        <H dataType="Float">21.7409058</H>
-                        <W dataType="Float">-108.704529</W>
-                        <X dataType="Float">21.7409058</X>
-                        <Y dataType="Float">-10.8704529</Y>
+                        <H dataType="Float">20.0151157</H>
+                        <W dataType="Float">-100.075577</W>
+                        <X dataType="Float">20.0151157</X>
+                        <Y dataType="Float">-10.0075579</Y>
                       </rect>
                       <rectMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+UVMode" name="Stretch" value="0" />
                       <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
@@ -536,12 +536,12 @@
                       <parentTransform dataType="ObjectRef">3747365445</parentTransform>
                       <pos dataType="Struct" type="Duality.Vector3">
                         <X dataType="Float">-9.631476</X>
-                        <Y dataType="Float">0</Y>
+                        <Y dataType="Float">3.24015513E-16</Y>
                         <Z dataType="Float">0</Z>
                       </pos>
                       <posAbs dataType="Struct" type="Duality.Vector3">
                         <X dataType="Float">-16.35259</X>
-                        <Y dataType="Float">0</Y>
+                        <Y dataType="Float">1.296062E-16</Y>
                         <Z dataType="Float">0</Z>
                       </posAbs>
                       <scale dataType="Float">2.11783719</scale>
@@ -805,10 +805,10 @@
                       <offset dataType="Int">2</offset>
                       <pixelGrid dataType="Bool">false</pixelGrid>
                       <rect dataType="Struct" type="Duality.Rect">
-                        <H dataType="Float">21.48989</H>
-                        <W dataType="Float">-107.449448</W>
-                        <X dataType="Float">21.48989</X>
-                        <Y dataType="Float">-10.7449446</Y>
+                        <H dataType="Float">21.3684444</H>
+                        <W dataType="Float">-106.842216</W>
+                        <X dataType="Float">21.3684444</X>
+                        <Y dataType="Float">-10.6842222</Y>
                       </rect>
                       <rectMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+UVMode" name="Stretch" value="0" />
                       <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
@@ -861,7 +861,7 @@
                       <parentTransform dataType="ObjectRef">1179350483</parentTransform>
                       <pos dataType="Struct" type="Duality.Vector3">
                         <X dataType="Float">-9.631476</X>
-                        <Y dataType="Float">0</Y>
+                        <Y dataType="Float">3.24015513E-16</Y>
                         <Z dataType="Float">0</Z>
                       </pos>
                       <posAbs dataType="Struct" type="Duality.Vector3">
@@ -1130,10 +1130,10 @@
                       <offset dataType="Int">2</offset>
                       <pixelGrid dataType="Bool">false</pixelGrid>
                       <rect dataType="Struct" type="Duality.Rect">
-                        <H dataType="Float">20.0921288</H>
-                        <W dataType="Float">-100.460648</W>
-                        <X dataType="Float">20.0921288</X>
-                        <Y dataType="Float">-10.0460644</Y>
+                        <H dataType="Float">21.3232956</H>
+                        <W dataType="Float">-106.61647</W>
+                        <X dataType="Float">21.3232956</X>
+                        <Y dataType="Float">-10.6616478</Y>
                       </rect>
                       <rectMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+UVMode" name="Stretch" value="0" />
                       <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
@@ -1186,7 +1186,7 @@
                       <parentTransform dataType="ObjectRef">439322729</parentTransform>
                       <pos dataType="Struct" type="Duality.Vector3">
                         <X dataType="Float">-9.631476</X>
-                        <Y dataType="Float">0</Y>
+                        <Y dataType="Float">3.24015513E-16</Y>
                         <Z dataType="Float">0</Z>
                       </pos>
                       <posAbs dataType="Struct" type="Duality.Vector3">
@@ -1455,10 +1455,10 @@
                       <offset dataType="Int">2</offset>
                       <pixelGrid dataType="Bool">false</pixelGrid>
                       <rect dataType="Struct" type="Duality.Rect">
-                        <H dataType="Float">20.8738232</H>
-                        <W dataType="Float">-104.369118</W>
-                        <X dataType="Float">20.8738232</X>
-                        <Y dataType="Float">-10.4369116</Y>
+                        <H dataType="Float">21.8878918</H>
+                        <W dataType="Float">-109.439453</W>
+                        <X dataType="Float">21.8878918</X>
+                        <Y dataType="Float">-10.9439459</Y>
                       </rect>
                       <rectMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+UVMode" name="Stretch" value="0" />
                       <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
@@ -1511,7 +1511,7 @@
                       <parentTransform dataType="ObjectRef">1973464609</parentTransform>
                       <pos dataType="Struct" type="Duality.Vector3">
                         <X dataType="Float">-9.631476</X>
-                        <Y dataType="Float">0</Y>
+                        <Y dataType="Float">3.24015513E-16</Y>
                         <Z dataType="Float">0</Z>
                       </pos>
                       <posAbs dataType="Struct" type="Duality.Vector3">
@@ -1713,7 +1713,7 @@
           <angularDamp dataType="Float">0.3</angularDamp>
           <angularVel dataType="Float">0</angularVel>
           <bodyType dataType="Enum" type="Duality.Components.Physics.BodyType" name="Dynamic" value="1" />
-          <colCat dataType="Enum" type="Duality.Components.Physics.CollisionCategory" name="Cat1" value="1" />
+          <colCat dataType="Enum" type="Duality.Components.Physics.CollisionCategory" name="Cat2" value="2" />
           <colFilter />
           <colWith dataType="Enum" type="Duality.Components.Physics.CollisionCategory" name="All" value="2147483647" />
           <continous dataType="Bool">false</continous>
