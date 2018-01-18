@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FellSky.Events;
 using FellSky.Resources;
+using FellSky.Components.GalaxyMap;
 
 namespace FellSky.Components
 {
@@ -40,6 +41,15 @@ namespace FellSky.Components
             get => DesiredTorque < 0 ? Rotation.CCW : DesiredTorque > 0 ? Rotation.CW : Rotation.None;
         }
         public string GivenName { get; set; }
+
+
+        #region Public Functions
+
+
+
+        #endregion
+
+        #region Private Functions
 
         void ICmpUpdatable.OnUpdate()
         {
@@ -115,5 +125,7 @@ namespace FellSky.Components
         {
             GameObj.DisposeLater();
         }
+
+        #endregion
     }
 }

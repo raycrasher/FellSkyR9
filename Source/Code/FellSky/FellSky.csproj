@@ -65,6 +65,8 @@
     <Compile Include="Components\CameraController.cs" />
     <Compile Include="Components\DeleteAfterDelay.cs" />
     <Compile Include="Components\DustParticleController.cs" />
+    <Compile Include="Components\GalaxyMap\FtlTarget.cs" />
+    <Compile Include="Components\Ships\FtlDrive.cs" />
     <Compile Include="Components\Ships\ShipAI.cs" />
     <Compile Include="Components\SpawnOnDeath.cs" />
     <Compile Include="Components\FollowTransform.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="Events\DamageEvent.cs" />
     <Compile Include="Events\DeathEvent.cs" />
+    <Compile Include="Events\FtlFailureEvent.cs" />
     <Compile Include="Events\RequestReloadEvent.cs" />
     <Compile Include="Events\ShipRefitUpdateEvent.cs" />
     <Compile Include="FellSkyAppData.cs" />

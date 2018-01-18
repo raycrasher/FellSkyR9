@@ -1,4 +1,20 @@
-﻿Boarding mini-game:
+﻿Each game map must have 1 point of interest.
+	POI:
+		Gas giant - Harvest: volatiles, antimatter
+
+
+
+Resources:
+	Common Volatiles
+	Rare Gas
+	Propellant
+
+	C
+
+
+
+
+Boarding mini-game:
 	- Consists of a list of battle reports from boarding party.
 	- Boarding party radios status
 	- If party spots something interesting, the game presents choices from which player must pick
