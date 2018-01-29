@@ -19,6 +19,7 @@ namespace FellSky.Components
     [Duality.Editor.EditorHintCategory("Ship")]
     public class Weapon : Component, ICmpUpdatable, ICmpInitializable
     {
+        static Random rng = new Random();
         public class Muzzle
         {
             [Duality.Editor.EditorHintRange(0,1)]
@@ -49,13 +50,14 @@ namespace FellSky.Components
         public float ReloadTime { get; set; }
         public int AmmoPerShot { get; set; } = 1;
         public int AmmoInMagazine { get; set; } = 100;
+        public float Spread { get; set; } = 2; // 2 degrees spread
 
         public string DisabledReason { get; set; }
         public int MagazineSize { get; set; } = 100;
 
         void ICmpUpdatable.OnUpdate()
         {
-            var sprite = GameObj.GetComponent<AnimSpriteRenderer>();
+            var sprites = GameObj.GetComponentsDeep<AnimSpriteRenderer>();
             switch (Status)
             {
                 case WeaponStatus.Ready:
@@ -64,8 +66,9 @@ namespace FellSky.Components
                         for (int i = 0; i < _muzzleState.Length; i++)
                             _muzzleState[i] = false;
                         _defaultMuzzleState = false;
-                        if (sprite != null)                        
-                            sprite.AnimTime = 0;
+                        if (sprites != null)                        
+                            foreach(var s in sprites)
+                                s.AnimTime = 0;
                         Status = WeaponStatus.Cycling;
                     }
                     break;
@@ -93,8 +96,9 @@ namespace FellSky.Components
                     {
                         _timer += Time.TimeMult * Time.SPFMult;
                     }
-                    if (sprite != null)
-                        sprite.AnimTime = _timer;
+                    if (sprites != null)
+                        foreach (var s in sprites)
+                            s.AnimTime = _timer;
                     break;
                 case WeaponStatus.Reloading:
                     var evt = new RequestReloadEvent(this);
@@ -149,7 +153,7 @@ namespace FellSky.Components
                 _muzzleState[index] = true;
             }
             
-            var projectile = Projectile.Res.Instantiate(xform.Pos, xform.Angle);
+            var projectile = Projectile.Res.Instantiate(xform.Pos, xform.Angle + MathF.DegToRad(rng.NextFloat(-Spread/2,Spread/2)));
             var projComponent = projectile.GetComponent<Projectile>();
             projComponent.Owner = Owner;
             projComponent.Muzzle = xform;
