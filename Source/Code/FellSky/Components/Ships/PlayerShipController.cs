@@ -30,11 +30,25 @@ namespace FellSky.Components
         public Key StrafeRight { get; set; } = Key.E;
         public Key Boost { get; set; } = Key.Space;
 
+        public Key FtlJump { get; set; } = Key.J;
+
 
         void ICmpUpdatable.OnUpdate()
         {
             ControlThrust();
             ControlWeapons();
+            ControlFtl();            
+        }
+
+        private void ControlFtl()
+        {
+            if (DualityApp.Keyboard.KeyHit(FtlJump))
+            {
+                var ftlCore = GameObj.GetComponent<Ships.FtlDrive>();
+                if (ftlCore == null)
+                    return;
+                ftlCore.JumpToFtl();
+            }
         }
 
         private void ControlWeapons()

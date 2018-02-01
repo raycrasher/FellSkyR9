@@ -23,5 +23,17 @@ namespace FellSky.Components.Ships
             get => _ftlTarget;
             set => _ftlTarget = value;
         }
+
+        public void JumpToFtl()
+        {
+            
+            if (FellSkyCore.Instance.CurrentFtlScene == null)
+            {
+                var sceneController = Scene.Current.FindComponent<MainGameSceneController>();
+                FellSkyCore.Instance.CurrentFtlScene = sceneController.FtlScene.Res;
+            }
+            Scene.SwitchTo(FellSkyCore.Instance.CurrentFtlScene);
+            
+        }
     }
 }

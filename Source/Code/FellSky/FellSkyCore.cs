@@ -43,7 +43,8 @@ namespace FellSky
             GC.Collect();
         }
 
-        public Scene CurrentScene { get; private set; }
+        public Scene CurrentFtlScene { get; set; }
+        
         public static FellSkyCore Instance { get; private set; }
     }
 }

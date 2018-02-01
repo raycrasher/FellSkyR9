@@ -66,6 +66,7 @@
     <Compile Include="Components\DeleteAfterDelay.cs" />
     <Compile Include="Components\DustParticleController.cs" />
     <Compile Include="Components\GalaxyMap\FtlTarget.cs" />
+    <Compile Include="Components\MainGameSceneController.cs" />
     <Compile Include="Components\Ships\FtlDrive.cs" />
     <Compile Include="Components\Ships\ShipAI.cs" />
     <Compile Include="Components\SpawnOnDeath.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Components\UI\ScreenBase.cs" />
     <Compile Include="Components\Ships\Weapon.cs" />
     <Compile Include="Components\Ships\WeaponMount.cs" />
+    <Compile Include="Components\UI\SpeechBox.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Events\DamageEvent.cs" />

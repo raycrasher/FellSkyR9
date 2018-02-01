@@ -168,8 +168,8 @@ namespace FellSky.Components
         {
             if (context == InitContext.Activate)
             {
-                var sprite = GameObj.GetComponent<AnimSpriteRenderer>();
-                if (sprite != null)
+                var sprites = GameObj.GetComponentsDeep<AnimSpriteRenderer>();
+                foreach(var sprite in sprites)
                 {
                     sprite.AnimDuration = CycleTime;
                     sprite.AnimTime = 0;
