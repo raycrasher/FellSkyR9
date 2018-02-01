@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Duality.Input;
-using Duality.Resources;
 
-namespace FellSky
+namespace FellSky.Components.UI
 {
-    public class FellSkyAppData
+    public class SpeechBox: Component
     {
-        public Gui.FontDef[] GuiFonts { get; set; }
+        public string Text { get; set; }
+        public int PortraitIndex { get; set; }
     }
 }
