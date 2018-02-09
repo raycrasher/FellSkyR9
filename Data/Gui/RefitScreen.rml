@@ -13,6 +13,13 @@
 	.hardpoint:hover{
 		
 	}
+    
+    #installList {
+        position: absolute;
+        display: none;
+        width: 200px;
+        height: 400px;
+    }
 </style>
 </head>
 <body id="refit">
@@ -21,6 +28,7 @@
   <h3 id="playerShipName" style="color: #1155ff88;"/>
   <ul id="hardPoints"></ul>
 
+  <ul id="installList"></ul>
 
 </body>
 </rml>
