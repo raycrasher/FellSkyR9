@@ -33,6 +33,9 @@ namespace FellSky.Components
         [DontSerialize]
         private GameObject _owner;
 
+        [DontSerialize]
+        private Events.WeaponFireEvent _fireEvent = new WeaponFireEvent();
+
         public WeaponStatus Status { get; set; }
         public ContentRef<Prefab> Projectile { get; set; }
 
@@ -145,12 +148,16 @@ namespace FellSky.Components
             if (index < 0)
             {
                 xform = GameObj.Transform;
+                _fireEvent.Muzzle = null;
                 _defaultMuzzleState = true;
+                _fireEvent.BarrelIndex = 0;
             }
             else
             {
                 xform = Muzzles[index].Transform;
                 _muzzleState[index] = true;
+                _fireEvent.Muzzle = Muzzles[index];
+                _fireEvent.BarrelIndex = index;
             }
             
             var projectile = Projectile.Res.Instantiate(xform.Pos, xform.Angle + MathF.DegToRad(rng.NextFloat(-Spread/2,Spread/2)));
@@ -161,7 +168,13 @@ namespace FellSky.Components
             projComponent.OnFire();
 
             Scene.Current.AddObject(projectile);
+            _fireEvent.Projectile = projectile;
+            _fireEvent.Owner = Owner;
+            
+            this.GameObj.FireEvent(this, _fireEvent);
+
             AmmoInMagazine--;
+
         }
 
         void ICmpInitializable.OnInit(InitContext context)
@@ -176,6 +189,7 @@ namespace FellSky.Components
                     sprite.AnimLoopMode = AnimSpriteRenderer.LoopMode.FixedSingle;
                 }
                 _muzzleState = new bool[Muzzles?.Length ?? 0];
+                _fireEvent.Weapon = this;
             }
         }
 
