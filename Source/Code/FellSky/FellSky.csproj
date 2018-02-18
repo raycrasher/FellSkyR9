@@ -67,6 +67,7 @@
     <Compile Include="Components\DustParticleController.cs" />
     <Compile Include="Components\GalaxyMap\FtlTarget.cs" />
     <Compile Include="Components\Graphics\WeaponMuzzleGlow.cs" />
+    <Compile Include="Components\IInventoryItem.cs" />
     <Compile Include="Components\MainGameSceneController.cs" />
     <Compile Include="Components\Ships\FtlDrive.cs" />
     <Compile Include="Components\Ships\ShipAI.cs" />

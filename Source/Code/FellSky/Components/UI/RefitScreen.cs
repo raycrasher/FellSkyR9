@@ -17,6 +17,12 @@ namespace FellSky.Components.UI
         private Hardpoint[] _hardpoints;
         [DontSerialize]
         private Dictionary<Hardpoint, Element> _hardPointElements;
+        [DontSerialize]
+        private Element _installListElem;
+        [DontSerialize]
+        private Hardpoint _selectedHardpoint;
+        [DontSerialize]
+        private Ship _playerShip;
 
         public RefitScreen()
             : base(FellSkyUserData.Data.Bindings.RefitShip, "Data/Gui/RefitScreen.rml")
@@ -32,12 +38,12 @@ namespace FellSky.Components.UI
             base.Show();
 
             var hardpointsElem = Document.GetElementById("hardPoints");
-            var playerShip = GameObj?.ParentScene?.FindComponent<PlayerShipController>()?.GameObj?.GetComponent<Ship>();
+            _playerShip = GameObj?.ParentScene?.FindComponent<PlayerShipController>()?.GameObj?.GetComponent<Ship>();
             //var ship = GameObj.GetComponent<PlayerShipController>().ControlledShip;
-            if (hardpointsElem != null && playerShip != null)
+            if (hardpointsElem != null && _playerShip != null)
             {
                 hardpointsElem.InnerRml = "";
-                _hardpoints = playerShip.GameObj.GetComponentsInChildren<Hardpoint>().ToArray();
+                _hardpoints = _playerShip.GameObj.GetComponentsInChildren<Hardpoint>().ToArray();
                 _hardPointElements = _hardpoints.ToDictionary(
                     k => k,
                     v =>
@@ -58,21 +64,52 @@ namespace FellSky.Components.UI
             var name = new Element("div");
             name.InnerRml = $"{hp.GameObj.Name}";
             elem.AppendChild(name);
+            elem.Click += (o, e) => OnHardpointClick(elem, hp);
             return elem;
+        }
+
+        private void OnHardpointClick(Element elem, Hardpoint hp)
+        {
+            _selectedHardpoint = hp;
+            _installListElem = _installListElem ?? Document.GetElementById("installList");
+            _installListElem.InnerRml = ""; // clear
+            var inventory = _playerShip.GameObj.GetComponent<Inventory>();
+            if (inventory != null)
+            {
+                foreach(var items in inventory.Items)
+                {
+
+                }
+            }
+            _installListElem.SetProperty("display", "block");            
+
         }
 
         void ICmpUpdatable.OnUpdate()
         {
-            if(IsVisible && _hardPointElements != null)
+            if (IsVisible)
             {
-                var camera = GameObj.GetComponent<Camera>();
-                foreach(var hp in _hardPointElements)
+                if (_hardPointElements != null)
                 {
-                    var xform = hp.Key.GameObj.Transform;
-                    var elem = hp.Value;
-                    var pos = camera.GetScreenCoord(xform.Pos);
-                    elem.SetProperty("left", pos.X);
-                    elem.SetProperty("top", pos.Y);
+                    var camera = GameObj.GetComponent<Camera>();
+                    foreach (var hp in _hardPointElements)
+                    {
+                        var xform = hp.Key.GameObj.Transform;
+                        var elem = hp.Value;
+                        var pos = camera.GetScreenCoord(xform.Pos);
+                        elem.SetProperty("left", pos.X);
+                        elem.SetProperty("top", pos.Y);
+
+                        if (_selectedHardpoint == hp.Key)
+                        {
+                            _installListElem = _installListElem ?? Document.GetElementById("installList");
+                            if (_installListElem != null)
+                            {
+                                _installListElem.SetProperty("left", pos.X + elem.Size.Width);
+                                _installListElem.SetProperty("top", pos.Y);
+                            }
+                        }
+                    }
                 }
             }
         }
