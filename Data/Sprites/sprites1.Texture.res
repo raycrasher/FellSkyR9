@@ -4,8 +4,8 @@
   <basePixmap dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Pixmap]]">
     <contentPath dataType="String">Data\Sprites\sprites1.Pixmap.res</contentPath>
   </basePixmap>
-  <filterMag dataType="Enum" type="Duality.Drawing.TextureMagFilter" name="Nearest" value="0" />
-  <filterMin dataType="Enum" type="Duality.Drawing.TextureMinFilter" name="Nearest" value="0" />
+  <filterMag dataType="Enum" type="Duality.Drawing.TextureMagFilter" name="Linear" value="1" />
+  <filterMin dataType="Enum" type="Duality.Drawing.TextureMinFilter" name="Linear" value="1" />
   <pixelformat dataType="Enum" type="Duality.Drawing.TexturePixelFormat" name="Rgba" value="3" />
   <size dataType="Struct" type="Duality.Vector2">
     <X dataType="Float">2033</X>

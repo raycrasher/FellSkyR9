@@ -25,7 +25,7 @@ namespace FellSky.Components.Graphics
                 foreach (var glow in MuzzleGlows)
                 {
                     var color = glow.ColorTint;
-                    var alpha = (color.A / 255f) - (Time.TimeMult * Time.SPFMult) / MuzzleCooldownTime;
+                    var alpha = MathF.Clamp((color.A / 255f) - (Time.TimeMult * Time.SPFMult) / MuzzleCooldownTime, 0, 1);
                     
                     glow.ColorTint = new Duality.Drawing.ColorRgba(color.R, color.G, color.B, alpha);
                 }
