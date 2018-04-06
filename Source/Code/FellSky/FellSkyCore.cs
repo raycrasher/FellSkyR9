@@ -19,8 +19,10 @@ namespace FellSky
         
         protected override void InitPlugin()
         {
-            if(DualityApp.ExecEnvironment == DualityApp.ExecutionEnvironment.Launcher)
+            if (DualityApp.ExecEnvironment == DualityApp.ExecutionEnvironment.Launcher) {
                 Gui.GuiCore.InitializeGui();
+                Director = new GameDirector();
+            }
             DualityApp.Keyboard.KeyDown += OnAltF4Pressed;
             base.InitPlugin();
         }
@@ -43,8 +45,16 @@ namespace FellSky
             GC.Collect();
         }
 
+        protected override void OnBeforeUpdate()
+        {
+            base.OnBeforeUpdate();
+            if (Director != null)
+                Director.Update();
+        }
+
         public Scene CurrentFtlScene { get; set; }
         
         public static FellSkyCore Instance { get; private set; }
+        public GameDirector Director { get; private set; }
     }
 }

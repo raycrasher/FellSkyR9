@@ -12,5 +12,8 @@ namespace FellSky
     public class FellSkyAppData
     {
         public Gui.FontDef[] GuiFonts { get; set; }
+        public ContentRef<Scene> MainMenuScene { get; set; }
+        public ContentRef<Scene> SystemScene { get; set; }
+        public ContentRef<Scene> SpaceScene { get; set; }
     }
 }

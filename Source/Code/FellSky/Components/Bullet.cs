@@ -53,7 +53,7 @@ namespace FellSky.Components
 
         void ICmpCollisionListener.OnCollisionSolve(Component sender, CollisionEventArgs args)
         {
-
+            
         }
 
         bool OnCollide(CollisionFilterData collision)
