@@ -5,11 +5,15 @@
 
 
 Resources:
-	Common Volatiles
-	Rare Gas
-	Propellant
+	
+	Consumers:
+		FTL						Fuel
+		Life Support			Supplies
+		Manufacturing			Metal, Crystal
 
-	C
+		Unique materials:		Monopole Dust
+								Annihilite Sphere
+
 
 
 

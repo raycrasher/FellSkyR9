@@ -67,6 +67,8 @@
     <Compile Include="Components\DustParticleController.cs" />
     <Compile Include="Components\GalaxyMap\FtlTarget.cs" />
     <Compile Include="Components\CoroutineExecutor.cs" />
+    <Compile Include="Components\Ships\ShipHull.cs" />
+    <Compile Include="Components\Space\SpaceCloud.cs" />
     <Compile Include="Coroutines.cs" />
     <Compile Include="GameDirector.cs" />
     <Compile Include="Components\Graphics\WeaponMuzzleGlow.cs" />
@@ -135,9 +137,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\Space\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir "$(SolutionDir)../../Plugins"

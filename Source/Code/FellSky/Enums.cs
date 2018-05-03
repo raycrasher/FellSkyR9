@@ -13,7 +13,7 @@ namespace FellSky
 
     public enum HardpointSize
     {
-        Small, Medium, Large, Huge
+        Tiny, Small, Medium, Large, Huge
     }
 
 }

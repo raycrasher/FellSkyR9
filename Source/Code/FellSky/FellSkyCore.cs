@@ -11,6 +11,8 @@ namespace FellSky
 {
     public class FellSkyCore: CorePlugin
     {
+
+
         public FellSkyCore()
         {
             Instance = this;
@@ -49,7 +51,7 @@ namespace FellSky
         {
             base.OnBeforeUpdate();
             if (Director != null)
-                Director.Update();
+                Director.OnFrameUpdate();
         }
 
         public Scene CurrentFtlScene { get; set; }
